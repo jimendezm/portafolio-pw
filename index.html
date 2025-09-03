@@ -5,6 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portafolio - Jimena Méndez Morales</title>
   <link rel="stylesheet" href="styles/base.css">
+
+  <!-- Datos estructurados JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jimena Méndez Morales",
+    "email": "mailto:jimenamendezmorales@gmail.com",
+    "telephone": "+50686235570",
+    "jobTitle": "Estudiante de Ingeniería en Computación",
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "Instituto Tecnológico de Costa Rica"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/jimena-mendez-morales-447b8437b/",
+      "https://github.com/jimendezm"
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -22,7 +42,7 @@
     <section id="presentacion">
       <h2>Bienvenid@</h2>
       <p>Hola, soy <strong>Jimena Méndez Morales</strong>, estudiante de Ingeniería en Computación en el Instituto Tecnológico de Costa Rica (TEC). 
-      Este portafolio recopila mis proyectos y aprendizajes durante el curso <em>Introducción al Desarrollo de Páginas Web</em>.</p>
+      Este portafolio recopila mis proyectos y aprendizajes en diferentes cursos universitarios.</p>
       <p>Si bien el desarrollo web me resulta interesante, mi mayor motivación está en explorar áreas como la <strong>ciberseguridad</strong>, 
       hacia donde quiero orientar mi carrera profesional.</p>
     </section>
@@ -30,49 +50,173 @@
     <!-- Trabajos Académicos -->
     <section id="trabajos">
       <h2>Trabajos Académicos</h2>
-      <article>
-        <h3>Proyectos Destacados</h3>
+
+      <!-- Curso 1 -->
+      <article class="card">
+        <h3>IC1803 - Taller de Programación</h3>
+        <p><strong>Créditos:</strong> 3 | <strong>Horas:</strong> 4</p>
+        <p><em>Descripción:</em> Curso introductorio a la programación en C y fundamentos básicos de algoritmos.</p>
         <ul>
           <li>
-            <strong>Juego de Damas | Python, Tkinter, POO</strong><br>
-            Desarrollo de un juego de damas para escritorio con modos personalizables (clásico, movimientos limitados, multijugador y contra IA). Incluye toda la lógica: reglas de movimiento, capturas, coronación y detección de empate.
-          </li>
-          <li>
-            <strong>Sistema ERP (Prototipo) | .NET Razor Pages, SQL, C#</strong><br>
-            Implementación de un prototipo ERP con módulos de usuarios, nómina, inventario, clientes, ventas, cotizaciones y facturación. Se incluyó autenticación, gestión de roles y tableros con métricas clave.
-          </li>
-          <li>
-            <strong>Aplicación Web con Firebase y AWS | React, Firebase, AWS</strong><br>
-            Desarrollo de una aplicación web con autenticación segura en Firebase, integración con la API de Hacienda de Costa Rica para datos tributarios y tipos de cambio, además de traducción automática multilenguaje con AWS Translate.
+            <strong>Trabajo:</strong> Calculadora básica en C <br>
+            <strong>Tipo:</strong> Laboratorio <br>
+            <strong>Descripción:</strong> Implementación de operaciones aritméticas con estructuras condicionales. <br>
+            <strong>Fecha:</strong> 2023-I <br>
+            <strong>Tecnologías:</strong> C <br>
           </li>
         </ul>
       </article>
+
+      <!-- Curso 2 -->
+      <article class="card">
+        <h3>IC3101 - Programación Orientada a Objetos</h3>
+        <p><strong>Créditos:</strong> 3 | <strong>Horas:</strong> 9</p>
+        <p><em>Descripción:</em> Diseño y desarrollo de aplicaciones aplicando principios de orientación a objetos.</p>
+        <ul>
+          <li>
+            <strong>Trabajo:</strong> Juego de Damas <br>
+            <strong>Tipo:</strong> Proyecto <br>
+            <strong>Descripción:</strong> Juego de damas con modos personalizables (clásico, movimientos limitados, multijugador, IA). Incluye reglas, coronación y detección de empate. <br>
+            <strong>Fecha:</strong> 2024-I <br>
+            <strong>Tecnologías:</strong> Python, Tkinter, POO <br>
+            <strong>Repositorio:</strong> <a href="#">GitHub</a>
+          </li>
+        </ul>
+      </article>
+
+      <!-- Curso 3 -->
+      <article class="card">
+        <h3>IC4700 - Diseño de Software</h3>
+        <p><strong>Créditos:</strong> 4 | <strong>Horas:</strong> 12</p>
+        <p><em>Descripción:</em> Principios de análisis y diseño de sistemas, metodologías ágiles y arquitectura de software.</p>
+        <ul>
+          <li>
+            <strong>Trabajo:</strong> Sistema ERP (Prototipo) <br>
+            <strong>Tipo:</strong> Proyecto <br>
+            <strong>Descripción:</strong> Prototipo ERP con módulos de usuarios, nómina, inventario, ventas y facturación. Incluye autenticación y dashboards. <br>
+            <strong>Fecha:</strong> 2024-II <br>
+            <strong>Tecnologías:</strong> .NET Razor Pages, SQL, C# <br>
+            <strong>Repositorio:</strong> <a href="#">GitHub</a>
+          </li>
+        </ul>
+      </article>
+
+      <!-- Curso 4 -->
+      <article class="card">
+        <h3>IC8057 - Introducción al Desarrollo de Páginas Web</h3>
+        <p><strong>Créditos:</strong> 4 | <strong>Horas:</strong> 12</p>
+        <p><em>Descripción:</em> Fundamentos de HTML, CSS, accesibilidad, SEO y despliegue de aplicaciones web.</p>
+        <ul>
+          <li>
+            <strong>Trabajo:</strong> Aplicación Web con Firebase y AWS <br>
+            <strong>Tipo:</strong> Proyecto <br>
+            <strong>Descripción:</strong> Web app con autenticación segura, integración con API tributaria de Costa Rica y traducción dinámica multilenguaje con AWS Translate. <br>
+            <strong>Fecha:</strong> 2025-I <br>
+            <strong>Tecnologías:</strong> React, Firebase, AWS <br>
+            <strong>Repositorio:</strong> <a href="#">GitHub</a> | <strong>Sitio:</strong> <a href="#">Demo</a>
+          </li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>IC2001 - Arquitectura de Computadores</h3>
+        <p><strong>Créditos:</strong> 4 | <strong>Horas:</strong> 4</p>
+        <p><em>Descripción:</em> Estudio de la organización interna de computadores, conjuntos de instrucciones y memoria.</p>
+        <ul>
+          <li>
+            <strong>Trabajo:</strong> Simulador de memoria cache <br>
+            <strong>Tipo:</strong> Laboratorio <br>
+            <strong>Descripción:</strong> Implementación de políticas de reemplazo en memoria cache. <br>
+            <strong>Fecha:</strong> 2023-II <br>
+            <strong>Tecnologías:</strong> C++ 
+          </li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>IC3101 - Bases de Datos I</h3>
+        <p><strong>Créditos:</strong> 4 | <strong>Horas:</strong> 9</p>
+        <p><em>Descripción:</em> Diseño e implementación de bases de datos relacionales.</p>
+        <ul>
+          <li>
+            <strong>Trabajo:</strong> Sistema de Reservas <br>
+            <strong>Tipo:</strong> Proyecto <br>
+            <strong>Descripción:</strong> Aplicación CRUD para gestionar reservas de salas en una empresa. <br>
+            <strong>Fecha:</strong> 2024-I <br>
+            <strong>Tecnologías:</strong> MySQL, PHP
+          </li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>IC4301 - Lenguajes de Programación</h3>
+        <p><strong>Créditos:</strong> 4 | <strong>Horas:</strong> 4</p>
+        <p><em>Descripción:</em> Paradigmas de programación y teoría de lenguajes.</p>
+        <ul>
+          <li>
+            <strong>Trabajo:</strong> Intérprete de expresiones matemáticas <br>
+            <strong>Tipo:</strong> Proyecto <br>
+            <strong>Descripción:</strong> Mini intérprete con soporte para operaciones básicas y variables. <br>
+            <strong>Fecha:</strong> 2024-II <br>
+            <strong>Tecnologías:</strong> Java
+          </li>
+        </ul>
+      </article>
+
     </section>
 
-    <!-- Información Personal y Profesional -->
+   <!-- Información Personal y Profesional -->
     <section id="informacion">
       <h2>Información Personal y Profesional</h2>
-      <p><strong>Correo:</strong> <a href="mailto:jimenamendezmorales@gmail.com">jimenamendezmorales@gmail.com</a></p>
-      <p><strong>Teléfono:</strong> +506 8623 5570</p>
-      <p>
-        <strong>Redes Profesionales:</strong> 
-        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a> | 
-        <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
-      </p>
 
-      <h3>Educación</h3>
-      <p><em>Bachillerato en Ingeniería en Computación</em>, Instituto Tecnológico de Costa Rica – Limón (2023 - Presente).</p>
+      <!-- Foto -->
+      <figure>
+        <img src="docs/imagen.jpg" alt="Foto profesional de Jimena Méndez Morales" width="200">
+        <figcaption>Jimena Méndez Morales</figcaption>
+      </figure>
 
+      <!-- Biografía -->
+      <h3>Biografía Profesional</h3>
+      <p>Soy estudiante de Ingeniería en Computación en el TEC con interés en el desarrollo de software y un enfoque creciente hacia la <strong>ciberseguridad</strong>. 
+      Me motiva el aprendizaje constante y el desarrollo de soluciones tecnológicas que sean seguras, escalables y funcionales.</p>
+
+      <!-- Habilidades Técnicas -->
       <h3>Habilidades Técnicas</h3>
+      <p><strong>Lenguajes:</strong> Python, Java, C/C++, JavaScript</p>
+      <p><strong>Desarrollo Web:</strong> React, Node.js, HTML, CSS, .NET (Razor Pages)</p>
+      <p><strong>Bases de Datos:</strong> SQL, MySQL</p>
+      <p><strong>Herramientas y Cloud:</strong> Git, AWS, Firebase</p>
+
+      <!-- Ejemplo visual de habilidades -->
+      <div class="skills">
+        <p>Python <span class="tag">Avanzado</span></p>
+        <p>Java <span class="tag">Intermedio</span></p>
+        <p>JavaScript <span class="tag">Intermedio</span></p>
+        <p>Ciberseguridad <span class="badge">Enfocado</span></p>
+      </div>
+
+      <!-- Certificaciones -->
+      <h3>Certificaciones</h3>
+      <ul>
+        <li>En progreso</li>
+      </ul>
+
+      <!-- Redes Profesionales -->
+      <h3>Redes Profesionales</h3>
       <p>
-        <strong>Lenguajes:</strong> Python, Java, C/C++, JavaScript <br>
-        <strong>Desarrollo Web:</strong> React, Node.js, HTML, CSS, .NET (Razor Pages) <br>
-        <strong>Bases de Datos:</strong> SQL, MySQL <br>
-        <strong>Herramientas y Cloud:</strong> Git, AWS, Firebase
+        <a href="https://www.linkedin.com/in/jimena-mendez-morales-447b8437b/" target="_blank" rel="noopener noreferrer">LinkedIn</a> | 
+        <a href="https://github.com/jimendezm" target="_blank" rel="noopener noreferrer">GitHub</a>
       </p>
 
-      <h3>Idiomas</h3>
-      <p>Español: Nativo | Inglés: Upper-Intermediate (B2+)</p>
+      <!-- Información adicional -->
+      <h3>Información Adicional</h3>
+      <p>Participación en proyectos universitarios enfocados en desarrollo de software. 
+      Interés en seguir fortaleciendo conocimientos en áreas como ciberseguridad, programación segura y arquitecturas escalables.</p>
+
+      <!-- Exportar a PDF -->
+      <h3>Exportar CV</h3>
+      <p>Puedes descargar mi currículum en PDF:</p>
+      <a href="docs/CV_JimenaMendez.docx" class="btn" download>Descargar CV</a>
     </section>
   </main>
 
