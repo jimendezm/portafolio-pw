@@ -3,15 +3,6 @@ export default function Informacion() {
     <section id="informacion">
       <h2>Información Personal y Profesional</h2>
 
-      <figure>
-        <img
-          src="docs/imagen.jpg"
-          alt="Foto profesional de Jimena Méndez Morales"
-          width="200"
-        />
-        <figcaption>Jimena Méndez Morales</figcaption>
-      </figure>
-
       <h3>Biografía Profesional</h3>
       <p>
         Soy estudiante de Ingeniería en Computación en el TEC con interés en el
@@ -20,22 +11,6 @@ export default function Informacion() {
         desarrollo de soluciones tecnológicas que sean seguras, escalables y
         funcionales.
       </p>
-
-      <h3>Habilidades Técnicas</h3>
-      <div className="skills">
-        <p>
-          Python <span className="tag">Avanzado</span>
-        </p>
-        <p>
-          Java <span className="tag">Intermedio</span>
-        </p>
-        <p>
-          JavaScript <span className="tag">Intermedio</span>
-        </p>
-        <p>
-          Ciberseguridad <span className="badge">Enfocado</span>
-        </p>
-      </div>
 
       <h3>Certificaciones</h3>
       <ul>
@@ -69,7 +44,7 @@ export default function Informacion() {
       </p>
 
       <h3>Exportar CV</h3>
-      <a href="docs/CV_JimenaMendez.docx" className="btn" download>
+      <a href="src/data/CV_JimenaMendez.docx" className="btn" download>
         Descargar CV
       </a>
     </section>

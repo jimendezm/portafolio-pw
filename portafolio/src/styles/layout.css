@@ -231,7 +231,6 @@ footer {
 /* Secciones */
 section {
   min-height: 100vh;
-  padding: 4rem 2rem;
   scroll-margin-top: 80px;
 }
 
