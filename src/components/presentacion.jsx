@@ -1,10 +1,12 @@
+import foto from '../assets/imagen.jpg';
+
 export default function Presentacion() {
   return (
     <section id="presentacion" className="presentacion-container">
       <div className="presentacion-content">
         <div className="foto-container">
           <img 
-            src="src/data/imagen.jpg" 
+            src={foto} 
             alt="Jimena Méndez Morales" 
             className="foto-perfil"
           />
