@@ -1,3 +1,5 @@
+
+
 export default function Informacion() {
   return (
     <section id="informacion">
@@ -44,7 +46,7 @@ export default function Informacion() {
       </p>
 
       <h3>Exportar CV</h3>
-      <a href="src/data/CV_JimenaMendez.docx" className="btn" download>
+      <a href="CV_JimenaMendez.docx" className="btn" download>
         Descargar CV
       </a>
     </section>
