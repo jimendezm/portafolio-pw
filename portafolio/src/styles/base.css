@@ -1,0 +1,43 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variables de color y fuente con tu paleta */
+:root {
+  --c-beige: #efd9b4;
+  --c-terracota: #d6a692;
+  --c-taupe: #a39081;
+  --c-verde-oscuro: #4d6160;
+  --c-marron-oscuro: #292522;
+  --c-bg: #f9f7f4;
+  --c-text: #333;
+  --font-main: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  font-family: var(--font-main);
+  background: var(--c-bg);
+  color: var(--c-text);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 600;
+  color: var(--c-marron-oscuro);
+}
+
+a {
+  color: var(--c-verde-oscuro);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: var(--c-terracota);
+}

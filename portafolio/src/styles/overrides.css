@@ -1,0 +1,14 @@
+
+
+/* Ejemplo: forzar color de badge dentro de .curso-card */
+.curso-card .badge {
+  background: red !important;
+  color: white !important;
+}
+
+/* Ejemplo de inline style coexistiendo */
+.titulo-seccion {
+  color: var(--c-primary);
+  font-size: 1.4rem;
+}
+

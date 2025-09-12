@@ -1,0 +1,130 @@
+[
+  {
+    "curso": "IC1803 - Taller de Programación",
+    "semestre": "2023-I",
+    "descripcion": "Curso introductorio a la programación y resolución de problemas computacionales.",
+    "trabajos": [
+      {
+        "nombre": "Tarea sobre estructuras básicas",
+        "tipo": "Tarea",
+        "descripcion": "Resolución de problemas aplicando condicionales y ciclos.",
+        "fecha": "2023-03-15",
+        "tecnologias": ["Python"],
+        "repositorio": null,
+        "sitio": null
+      }
+    ]
+  },
+  {
+    "curso": "IC2001 - Estructuras de Datos",
+    "semestre": "2023-II",
+    "descripcion": "Diseño e implementación de estructuras de datos fundamentales como listas, pilas, colas y árboles.",
+    "trabajos": [
+      {
+        "nombre": "Implementación de Árbol Binario",
+        "tipo": "Laboratorio",
+        "descripcion": "Desarrollo de un árbol binario con inserción, búsqueda y recorrido en orden.",
+        "fecha": "2023-09-25",
+        "tecnologias": ["Java"],
+        "repositorio": null,
+        "sitio": null
+      }
+    ]
+  },
+  {
+    "curso": "IC2101 - Arquitectura de Computadores",
+    "semestre": "2024-I",
+    "descripcion": "Fundamentos de la organización y arquitectura de procesadores y sistemas de memoria.",
+    "trabajos": [
+      {
+        "nombre": "Simulador de pipeline",
+        "tipo": "Proyecto",
+        "descripcion": "Construcción de un simulador básico de pipeline para procesadores.",
+        "fecha": "2024-05-20",
+        "tecnologias": ["C++"],
+        "repositorio": null,
+        "sitio": null
+      }
+    ]
+  },
+  {
+    "curso": "IC3101 - Programación Orientada a Objetos",
+    "semestre": "2024-I",
+    "descripcion": "Aplicación de principios de programación orientada a objetos en el desarrollo de aplicaciones.",
+    "trabajos": [
+      {
+        "nombre": "Juego de Damas",
+        "tipo": "Proyecto",
+        "descripcion": "Juego de damas con modos personalizables (clásico, limitados, multijugador, IA).",
+        "fecha": "2024-05-10",
+        "tecnologias": ["Python", "Tkinter", "POO"],
+        "repositorio": "https://github.com/jimendezm/checkers-game",
+        "sitio": null
+      }
+    ]
+  },
+  {
+    "curso": "IC3101 - Bases de Datos I",
+    "semestre": "2024-II",
+    "descripcion": "Modelado, diseño e implementación de bases de datos relacionales.",
+    "trabajos": [
+      {
+        "nombre": "Modelo entidad-relación de clínica",
+        "tipo": "Proyecto",
+        "descripcion": "Creación de un modelo de base de datos para una clínica y consultas SQL asociadas.",
+        "fecha": "2024-10-15",
+        "tecnologias": ["MySQL"],
+        "repositorio": null,
+        "sitio": null
+      }
+    ]
+  },
+  {
+    "curso": "IC4301 - Lenguajes de Programación",
+    "semestre": "2024-II",
+    "descripcion": "Estudio de paradigmas de lenguajes de programación y su implementación.",
+    "trabajos": [
+      {
+        "nombre": "Analizador sintáctico",
+        "tipo": "Laboratorio",
+        "descripcion": "Construcción de un analizador sintáctico simple para una gramática dada.",
+        "fecha": "2024-11-10",
+        "tecnologias": ["Python"],
+        "repositorio": null,
+        "sitio": null
+      }
+    ]
+  },
+  {
+    "curso": "IC4700 - Diseño de Software",
+    "semestre": "2024-II",
+    "descripcion": "Diseño de aplicaciones de software aplicando patrones, principios y metodologías de desarrollo.",
+    "trabajos": [
+      {
+        "nombre": "Sistema ERP (Prototipo)",
+        "tipo": "Proyecto",
+        "descripcion": "Prototipo ERP con módulos de usuarios, nómina, inventario y facturación.",
+        "fecha": "2024-10-01",
+        "tecnologias": [".NET Razor Pages", "SQL", "C#"],
+        "repositorio": "https://github.com/jimendezm/erp-system",
+        "sitio": null
+      }
+    ]
+  },
+  {
+    "curso": "IC8057 - Introducción al Desarrollo de Páginas Web",
+    "semestre": "2025-I",
+    "descripcion": "Fundamentos de HTML, CSS, accesibilidad, SEO y despliegue de aplicaciones web.",
+    "trabajos": [
+      {
+        "nombre": "Aplicación Web con Firebase y AWS",
+        "tipo": "Proyecto",
+        "descripcion": "Web app con autenticación segura, integración con API de Hacienda y traducción dinámica.",
+        "fecha": "2025-04-15",
+        "tecnologias": ["React", "Firebase", "AWS"],
+        "repositorio": "https://github.com/jimendezm/webapp-firebase-aws",
+        "sitio": "https://webapp-demo.netlify.app"
+      }
+    ]
+  }
+]

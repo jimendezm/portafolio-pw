@@ -1,0 +1,126 @@
+/* Botones */
+.btn {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  background: var(--c-verde-oscuro);
+  color: white;
+  font-size: 0.9rem;
+  transition: background 0.2s ease, transform 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+/* Pseudo-clases de estado */
+.btn:hover {
+  background: var(--c-taupe);
+  transform: translateY(-2px);
+}
+.btn:focus-visible {
+  outline: 3px solid var(--c-terracota);
+}
+.btn:active {
+  transform: translateY(0);
+}
+
+/* Proyectos */
+.proyecto-card {
+  background: #fafafa;
+  border-radius: 8px;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow-x: auto; /* Control de overflow */
+}
+.proyecto-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* Tags y Badges */
+.tag {
+  background: var(--c-verde-oscuro);
+  color: white;
+  font-size: 0.8rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+}
+
+.badge {
+  background: var(--c-terracota);
+  color: white;
+  font-size: 0.8rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 50px;
+}
+
+/* Pseudo-clases estructurales */
+.proyectos-container div:first-child {
+  border-left: 4px solid var(--c-verde-oscuro);
+}
+.proyectos-container div:last-child {
+  border-right: 4px solid var(--c-terracota);
+}
+.proyectos-container div:nth-child(2n) {
+  background: #f5f2eb;
+}
+
+/* Presentación con foto */
+.presentacion-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.presentacion-content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.foto-container {
+  flex-shrink: 0;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--c-terracota);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.foto-container:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.foto-perfil {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.foto-container:hover .foto-perfil {
+  transform: scale(1.05);
+}
+
+.texto-presentacion {
+  max-width: 600px;
+}
+
+.texto-presentacion h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--c-marron-oscuro);
+  position: relative;
+}
+
+.texto-presentacion h2::after {
+  content: '';
+}
