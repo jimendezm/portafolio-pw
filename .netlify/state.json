@@ -1,0 +1,21 @@
+{
+	"geolocation": {
+		"data": {
+			"city": "San Pablo",
+			"country": {
+				"code": "CR",
+				"name": "Costa Rica"
+			},
+			"subdivision": {
+				"code": "G",
+				"name": "Guanacaste Province"
+			},
+			"timezone": "America/Costa_Rica",
+			"latitude": 10.0172,
+			"longitude": -85.2023,
+			"postalCode": "50904"
+		},
+		"timestamp": 1757721317906
+	},
+	"siteId": "170cc65e-353a-4855-89e7-9db60a682fbd"
+}

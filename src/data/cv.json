@@ -1,0 +1,25 @@
+{
+  "nombre": "Jimena Méndez Morales",
+  "correo": "jimenamendezmorales@gmail.com",
+  "telefono": "+506 8623 5570",
+  "biografia": "Soy estudiante de Ingeniería en Computación en el TEC con interés en desarrollo de software y ciberseguridad. Me motiva el aprendizaje constante y el desarrollo de soluciones seguras, escalables y funcionales.",
+  "educacion": [
+    {
+      "institucion": "Instituto Tecnológico de Costa Rica",
+      "titulo": "Bachillerato en Ingeniería en Computación",
+      "periodo": "2023 - Presente"
+    }
+  ],
+  "habilidades": {
+    "Lenguajes": ["Python", "Java", "C/C++", "JavaScript"],
+    "Desarrollo Web": ["React", "Node.js", "HTML", "CSS", ".NET (Razor Pages)"],
+    "Bases de Datos": ["SQL", "MySQL"],
+    "Herramientas y Cloud": ["Git", "AWS", "Firebase"]
+  },
+  "certificaciones": ["En progreso"],
+  "redes": {
+    "LinkedIn": "https://www.linkedin.com/in/jimena-mendez-morales-447b8437b/",
+    "GitHub": "https://github.com/jimendezm"
+  },
+  "infoAdicional": "Participación en proyectos universitarios enfocados en desarrollo de software. Interés en ciberseguridad, programación segura y arquitecturas escalables."
+}
