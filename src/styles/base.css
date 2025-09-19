@@ -1,11 +1,12 @@
-/* Reset básico */
+/* 🔹 Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Variables de color y fuente con tu paleta */
+
+/* 🔹 Variables globales */
 :root {
   --c-beige: #efd9b4;
   --c-terracota: #d6a692;
@@ -17,22 +18,43 @@
   --font-main: "Segoe UI", Arial, sans-serif;
 }
 
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+  align-items: center;
+}
+
+/* 🔹 Estructura base */
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
 body {
   font-family: var(--font-main);
   background: var(--c-bg);
   color: var(--c-text);
   line-height: 1.6;
   scroll-behavior: smooth;
+  overflow-x: hidden; /* evita scroll horizontal molesto */
 }
 
+/* 🔹 Tipografía */
 h1,
 h2,
 h3,
 h4 {
   font-weight: 600;
   color: var(--c-marron-oscuro);
+  line-height: 1.2;
 }
 
+p {
+  margin-bottom: 1rem;
+}
+
+/* 🔹 Enlaces */
 a {
   color: var(--c-verde-oscuro);
   text-decoration: none;
@@ -40,4 +62,11 @@ a {
 }
 a:hover {
   color: var(--c-terracota);
+}
+
+/* 🔹 Imágenes */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
