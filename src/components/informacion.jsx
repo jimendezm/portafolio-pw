@@ -97,7 +97,7 @@ export default function Informacion() {
 
   return (
     <section id="informacion">
-      <h2>Información Personal y Profesional</h2>
+      <h2><strong>Información Personal y Profesional</strong></h2>
 
       {/* Biografía */}
       <h3>Biografía Profesional</h3>
@@ -107,9 +107,9 @@ export default function Informacion() {
       <h3>Educación</h3>
       <ul>
         {cvData.educacion.map((edu, i) => (
-          <li key={i}>
+          <p key={i}>
             {edu.titulo} - {edu.institucion} ({edu.periodo})
-          </li>
+          </p>
         ))}
       </ul>
 
@@ -125,7 +125,7 @@ export default function Informacion() {
       <h3>Certificaciones</h3>
       <ul>
         {cvData.certificaciones.map((cert, i) => (
-          <li key={i}>{cert}</li>
+          <p key={i}>{cert}</p>
         ))}
       </ul>
 

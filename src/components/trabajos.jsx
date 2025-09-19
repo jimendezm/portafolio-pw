@@ -38,7 +38,7 @@ export default function Trabajos() {
 
   return (
     <section id="trabajos">
-      <h2>Trabajos Académicos</h2>
+      <h2><strong>Trabajos Académicos</strong></h2>
 
       <div className="cursos-container">
         {proyectosData.map((curso, index) => (
