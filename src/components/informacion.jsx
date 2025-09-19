@@ -108,7 +108,7 @@ export default function Informacion() {
       <ul>
         {cvData.educacion.map((edu, i) => (
           <li key={i}>
-            <strong>{edu.titulo}</strong> - {edu.institucion} ({edu.periodo})
+            {edu.titulo} - {edu.institucion} ({edu.periodo})
           </li>
         ))}
       </ul>

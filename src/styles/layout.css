@@ -19,6 +19,11 @@ header {
   padding: 1rem 2rem;
 }
 
+.proyectos-container {
+  display: grid;
+  gap: 1rem;
+}
+
 .logo {
   font-size: 1.5rem;
   font-weight: 700;
@@ -148,6 +153,7 @@ section:nth-child(even) {
 }
 
 /* 🔹 Grid de cursos */
+/* 🔹 Grid de cursos */
 .cursos-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -160,7 +166,12 @@ section:nth-child(even) {
   border-radius: 12px;
   padding: 1.5rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  height: auto; 
+  display: flex;
+  flex-direction: column; /* Permite organizar internamente */
+  justify-content: flex-start;
 }
+
 
 .curso-card p + .proyectos-container {
   margin-top: 1rem;

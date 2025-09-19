@@ -1,15 +1,24 @@
 [
   {
     "curso": "IC1803 - Taller de Programación",
-    "semestre": "2023-I",
-    "descripcion": "Curso introductorio a la programación y resolución de problemas computacionales.",
+    "semestre": "2023-II",
+    "descripcion": "Curso introductorio a la programación y resolución de problemas aplicando Python y Tkinter.",
     "trabajos": [
       {
-        "nombre": "Tarea sobre estructuras básicas",
-        "tipo": "Tarea",
-        "descripcion": "Resolución de problemas aplicando condicionales y ciclos.",
-        "fecha": "2023-03-15",
-        "tecnologias": ["Python"],
+        "nombre": "Gestión de aerolínea",
+        "tipo": "Proyecto",
+        "descripcion": "Aplicación en Python para gestionar vuelos y pasajeros utilizando Tkinter.",
+        "fecha": "2023-04-15",
+        "tecnologias": ["Python", "Tkinter"],
+        "repositorio": null,
+        "sitio": null
+      },
+      {
+        "nombre": "Juego de Damas",
+        "tipo": "Proyecto",
+        "descripcion": "Juego de damas en Python con interfaz gráfica en Tkinter.",
+        "fecha": "2023-05-20",
+        "tecnologias": ["Python", "Tkinter"],
         "repositorio": null,
         "sitio": null
       }
@@ -17,113 +26,203 @@
   },
   {
     "curso": "IC2001 - Estructuras de Datos",
-    "semestre": "2023-II",
-    "descripcion": "Diseño e implementación de estructuras de datos fundamentales como listas, pilas, colas y árboles.",
-    "trabajos": [
-      {
-        "nombre": "Implementación de Árbol Binario",
-        "tipo": "Laboratorio",
-        "descripcion": "Desarrollo de un árbol binario con inserción, búsqueda y recorrido en orden.",
-        "fecha": "2023-09-25",
-        "tecnologias": ["Java"],
-        "repositorio": null,
-        "sitio": null
-      }
-    ]
-  },
-  {
-    "curso": "IC2101 - Arquitectura de Computadores",
     "semestre": "2024-I",
-    "descripcion": "Fundamentos de la organización y arquitectura de procesadores y sistemas de memoria.",
+    "descripcion": "Diseño e implementación de estructuras de datos fundamentales en C++.",
     "trabajos": [
       {
-        "nombre": "Simulador de pipeline",
+        "nombre": "Librería String",
         "tipo": "Proyecto",
-        "descripcion": "Construcción de un simulador básico de pipeline para procesadores.",
-        "fecha": "2024-05-20",
+        "descripcion": "Implementación de una librería para manejo de strings en C++.",
+        "fecha": "2024-03-10",
         "tecnologias": ["C++"],
-        "repositorio": null,
+        "repositorio": "https://git.mora.co.cr/jimendez/libreria-string.git",
+        "sitio": null
+      },
+      {
+        "nombre": "Trivia",
+        "tipo": "Proyecto",
+        "descripcion": "Juego de trivia con lectura de archivos y uso de librería String.",
+        "fecha": "2024-04-05",
+        "tecnologias": ["C++"],
+        "repositorio": "https://git.mora.co.cr/geovanniga32/trivia.git",
+        "sitio": null
+      },
+      {
+        "nombre": "Constructor XML",
+        "tipo": "Proyecto",
+        "descripcion": "Constructor de documentos XML utilizando C++.",
+        "fecha": "2024-05-12",
+        "tecnologias": ["C++"],
+        "repositorio": "https://git.mora.co.cr/geovanniga32/constructor-xml.git",
+        "sitio": null
+      },
+      {
+        "nombre": "Visualizador de grafos",
+        "tipo": "Proyecto",
+        "descripcion": "Implementación de varios algoritmos de búsqueda y visualización de grafos en C++.",
+        "fecha": "2024-06-20",
+        "tecnologias": ["C++"],
+        "repositorio": "https://git.mora.co.cr/geovanniga32/proyecto-4-visualizadordegrafos.git",
         "sitio": null
       }
     ]
   },
   {
-    "curso": "IC3101 - Programación Orientada a Objetos",
+    "curso": "IC3101 - Arquitectura de Computadores",
     "semestre": "2024-I",
-    "descripcion": "Aplicación de principios de programación orientada a objetos en el desarrollo de aplicaciones.",
+    "descripcion": "Fundamentos de arquitectura de procesadores y proyectos en ARM y Node.js.",
     "trabajos": [
       {
-        "nombre": "Juego de Damas",
+        "nombre": "Calculadora multibase",
         "tipo": "Proyecto",
-        "descripcion": "Juego de damas con modos personalizables (clásico, limitados, multijugador, IA).",
-        "fecha": "2024-05-10",
-        "tecnologias": ["Python", "Tkinter", "POO"],
-        "repositorio": "https://github.com/jimendezm/checkers-game",
+        "descripcion": "Conversión directa entre bases sin pasar por decimal.",
+        "fecha": "2024-04-18",
+        "tecnologias": ["Node.js"],
+        "repositorio": "https://git.mora.co.cr/jimendez/calculadora-multibase.git",
+        "sitio": null
+      },
+      {
+        "nombre": "Proyecto Matrices",
+        "tipo": "Proyecto",
+        "descripcion": "Operaciones con matrices en ensamblador ARM.",
+        "fecha": "2024-05-30",
+        "tecnologias": ["ARM Assembly"],
+        "repositorio": "https://git.mora.co.cr/jimenez/proyecto-matrices.git",
+        "sitio": null
+      },
+      {
+        "nombre": "Battleship",
+        "tipo": "Proyecto",
+        "descripcion": "Juego Battleship implementado en ARM.",
+        "fecha": "2024-06-25",
+        "tecnologias": ["ARM Assembly"],
+        "repositorio": "https://git.mora.co.cr/jimendez/proyecto-3-battleship.git",
         "sitio": null
       }
     ]
   },
   {
-    "curso": "IC3101 - Bases de Datos I",
-    "semestre": "2024-II",
-    "descripcion": "Modelado, diseño e implementación de bases de datos relacionales.",
+    "curso": "IC2101 - Programación Orientada a Objetos",
+    "semestre": "2023-Verano",
+    "descripcion": "Principios de programación orientada a objetos aplicados en Java.",
     "trabajos": [
       {
-        "nombre": "Modelo entidad-relación de clínica",
+        "nombre": "Tienda de ciclismo",
         "tipo": "Proyecto",
-        "descripcion": "Creación de un modelo de base de datos para una clínica y consultas SQL asociadas.",
-        "fecha": "2024-10-15",
-        "tecnologias": ["MySQL"],
-        "repositorio": null,
+        "descripcion": "Gestión de tienda de ciclismo con manejo de archivos CSV en Java.",
+        "fecha": "2023-07-10",
+        "tecnologias": ["Java", "CSV"],
+        "repositorio": "https://github.com/2023-Semestre-2/proyecto-1-geovanni-jimena-y-camilo.git",
+        "sitio": null
+      },
+      {
+        "nombre": "Simulador de procesos",
+        "tipo": "Proyecto",
+        "descripcion": "Simulación de procesos con threads en Java.",
+        "fecha": "2023-08-15",
+        "tecnologias": ["Java", "Threads"],
+        "repositorio": "https://github.com/2023-Semestre-2/proyecto-2-jimena-camilo-y-geovanni.git",
         "sitio": null
       }
     ]
   },
   {
-    "curso": "IC4301 - Lenguajes de Programación",
+    "curso": "IC4301 - Bases de Datos I",
     "semestre": "2024-II",
-    "descripcion": "Estudio de paradigmas de lenguajes de programación y su implementación.",
+    "descripcion": "Modelado e implementación de bases de datos relacionales.",
     "trabajos": [
       {
-        "nombre": "Analizador sintáctico",
-        "tipo": "Laboratorio",
-        "descripcion": "Construcción de un analizador sintáctico simple para una gramática dada.",
-        "fecha": "2024-11-10",
-        "tecnologias": ["Python"],
-        "repositorio": null,
-        "sitio": null
-      }
-    ]
-  },
-  {
-    "curso": "IC4700 - Diseño de Software",
-    "semestre": "2024-II",
-    "descripcion": "Diseño de aplicaciones de software aplicando patrones, principios y metodologías de desarrollo.",
-    "trabajos": [
-      {
-        "nombre": "Sistema ERP (Prototipo)",
+        "nombre": "ERP",
         "tipo": "Proyecto",
-        "descripcion": "Prototipo ERP con módulos de usuarios, nómina, inventario y facturación.",
-        "fecha": "2024-10-01",
+        "descripcion": "Sistema ERP desarrollado en .NET con Razor Pages.",
+        "fecha": "2024-11-01",
         "tecnologias": [".NET Razor Pages", "SQL", "C#"],
-        "repositorio": "https://github.com/jimendezm/erp-system",
+        "repositorio": "https://github.com/RaJami1205/Enterprise-Resource-Planning.git",
         "sitio": null
       }
     ]
   },
   {
-    "curso": "IC8057 - Introducción al Desarrollo de Páginas Web",
-    "semestre": "2025-I",
-    "descripcion": "Fundamentos de HTML, CSS, accesibilidad, SEO y despliegue de aplicaciones web.",
+    "curso": "IC6400 - Investigación de Operaciones",
+    "semestre": "2024-II",
+    "descripcion": "Resolución de problemas de optimización y algoritmos clásicos.",
     "trabajos": [
       {
-        "nombre": "Aplicación Web con Firebase y AWS",
+        "nombre": "Página de resolución de ejercicios",
         "tipo": "Proyecto",
-        "descripcion": "Web app con autenticación segura, integración con API de Hacienda y traducción dinámica.",
-        "fecha": "2025-04-15",
+        "descripcion": "Implementación de algoritmos como Knapsack, Binary Tree, Shortest Path y Sport Series.",
+        "fecha": "2024-11-20",
+        "tecnologias": ["Python", "Flask", "React"],
+        "repositorio": "https://github.com/RandallCorellaCastillo/PYIO.git",
+        "sitio": null
+      }
+    ]
+  },
+  {
+    "curso": "IC6821 - Diseño de Software",
+    "semestre": "2024-Verano",
+    "descripcion": "Aplicación de patrones y metodologías modernas en diseño de software.",
+    "trabajos": [
+      {
+        "nombre": "Proyecto Hacienda",
+        "tipo": "Proyecto",
+        "descripcion": "Aplicación para Hacienda desarrollada en equipo.",
+        "fecha": "2024-07-15",
+        "tecnologias": ["React", ".NET", "SQL"],
+        "repositorio": "https://github.com/Braslyvm/-Proyecto-1-Dise-o-Hacienda.git",
+        "sitio": null
+      },
+      {
+        "nombre": "Proyecto Taller Mecánico",
+        "tipo": "Proyecto",
+        "descripcion": "Aplicación web y móvil con autenticación Firebase y traducción AWS.",
+        "fecha": "2024-08-30",
         "tecnologias": ["React", "Firebase", "AWS"],
-        "repositorio": "https://github.com/jimendezm/webapp-firebase-aws",
-        "sitio": "https://webapp-demo.netlify.app"
+        "repositorio": "https://github.com/Braslyvm/PY2_TallerMecanico_web.git",
+        "sitio": null
+      }
+    ]
+  },
+  {
+    "curso": "IC4700 - Lenguajes de Programación",
+    "semestre": "2025-I",
+    "descripcion": "Estudio de paradigmas de lenguajes de programación con implementación de proyectos.",
+    "trabajos": [
+      {
+        "nombre": "Manejo de inventario",
+        "tipo": "Proyecto",
+        "descripcion": "Sistema de inventario desarrollado en C.",
+        "fecha": "2025-02-10",
+        "tecnologias": ["C"],
+        "repositorio": "https://github.com/RicardoArce2404/proyecto-1-lp.git",
+        "sitio": null
+      },
+      {
+        "nombre": "Gestión de finca agrícola",
+        "tipo": "Proyecto",
+        "descripcion": "Proyecto en Haskell para gestión de finca agrícola.",
+        "fecha": "2025-03-05",
+        "tecnologias": ["Haskell"],
+        "repositorio": "https://github.com/RicardoArce2404/proyecto-2-lp.git",
+        "sitio": null
+      },
+      {
+        "nombre": "Sudoku",
+        "tipo": "Proyecto",
+        "descripcion": "Juego Sudoku implementado en Prolog y con interfaz en Java.",
+        "fecha": "2025-04-20",
+        "tecnologias": ["Prolog", "Java"],
+        "repositorio": "https://github.com/jimendezm/proyecto-3-lp.git",
+        "sitio": null
+      },
+      {
+        "nombre": "Mario Kart",
+        "tipo": "Proyecto",
+        "descripcion": "Juego multijugador Mario Kart con backend en Node.js y frontend en React usando WebSockets.",
+        "fecha": "2025-05-30",
+        "tecnologias": ["Node.js", "React", "WebSockets"],
+        "repositorio": "https://github.com/jimendezm/proyecto-4-lp.git",
+        "sitio": null
       }
     ]
   }
