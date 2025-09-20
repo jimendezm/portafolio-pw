@@ -226,4 +226,20 @@
       }
     ]
   }
+  {
+    "curso": "IC4003 - Introducción al Desarrollo de Páginas Web",
+    "semestre": "2025-II",
+    "descripcion": "Fundamentos de HTML, CSS y JavaScript aplicados al desarrollo de páginas web con énfasis en manipulación del DOM.",
+    "trabajos": [
+      {
+        "nombre": "Laboratorio 6 - Edición del DOM",
+        "tipo": "Laboratorio",
+        "descripcion": "Práctica enfocada en la edición dinámica del DOM utilizando JavaScript.",
+        "fecha": "2025-09-19",
+        "tecnologias": ["HTML", "CSS", "JavaScript"],
+        "repositorio": "https://github.com/jimendezm/Lab6.git",
+        "sitio": null
+      }
+    ]
+  }
 ]
