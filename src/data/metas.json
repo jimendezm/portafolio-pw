@@ -1,0 +1,52 @@
+{
+  "metas": [
+    {
+      "categoria": "Corto Plazo (1-2 años)",
+      "items": [
+        {
+          "titulo": "Azure Fundamentals Certification",
+          "descripcion": "Obtener la certificación AZ-900 de Microsoft Azure Fundamentals para validar conocimientos en cloud computing.",
+          "progreso": 40,
+          "acciones": ["Estudiar guía oficial AZ-900", "Realizar exámenes de práctica", "Programar examen de certificación"]
+        },
+        {
+          "titulo": "Cisco CCNA Certification",
+          "descripcion": "Certificación en redes y seguridad de Cisco para fortalecer conocimientos en infraestructura de red.",
+          "progreso": 25,
+          "acciones": ["Completar curso CCNA", "Prácticas de laboratorio", "Preparar examen teórico y práctico"]
+        },
+        {
+          "titulo": "Power BI Certification",
+          "descripcion": "Certificación en análisis y visualización de datos con Microsoft Power BI.",
+          "progreso": 30,
+          "acciones": ["Aprender DAX y Power Query", "Crear dashboards de práctica", "Preparar examen PL-300"]
+        }
+      ]
+    },
+    {
+      "categoria": "Mediano Plazo (3-5 años)",
+      "items": [
+        {
+          "titulo": "Maestría en Ciberseguridad",
+          "descripcion": "Estudiar maestría especializada en ciberseguridad, preferiblemente en el extranjero con enfoque en seguridad cloud.",
+          "progreso": 15,
+          "acciones": ["Investigación de universidades", "Preparación de GRE/TOEFL", "Solicitud de becas", "Preparar portfolio académico"]
+        }
+      ]
+    }
+  ],
+  "filosofia": [
+    {
+      "titulo": "Aprendizaje Continuo",
+      "descripcion": "La tecnología evoluciona rápidamente, y mantenerme actualizada con certificaciones y estudios formales es fundamental para mi desarrollo profesional."
+    },
+    {
+      "titulo": "Especialización Técnica",
+      "descripcion": "Creo en la importancia de validar conocimientos mediante certificaciones reconocidas internacionalmente en cloud, redes y seguridad."
+    },
+    {
+      "titulo": "Impacto en la Comunidad",
+      "descripcion": "Busco que mi trabajo contribuya a crear un entorno digital más seguro y accesible para organizaciones y usuarios finales."
+    }
+  ]
+}
