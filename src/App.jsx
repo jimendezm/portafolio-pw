@@ -6,6 +6,7 @@ import Recomendaciones from "./components/recomendaciones";
 import Hobbies from "./components/hobbies";
 import ExperienciasTEC from "./components/experiencias";
 import Footer from "./components/footer";
+import MetasProfesionales from "./components/metas";
 
 import "./styles/base.css";
 import "./styles/layout.css";
@@ -31,6 +32,9 @@ function App() {
         </section>
         <section id="experiencias-tec">
           <ExperienciasTEC />
+        </section>
+        <section id='metas'>
+          <MetasProfesionales />
         </section>
         <section id="recomendaciones">
           <Recomendaciones />

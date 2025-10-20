@@ -6,7 +6,7 @@ export default function Hobbies() {
   return (
     <section id="hobbies" className="hobbies-section">
       <div className="hobbies-container">
-        <h2>Hobbies e Intereses</h2>
+        <h2><strong>Hobbies e Intereses</strong></h2>
         <p className="hobbies-descripcion">
           Más allá del mundo académico y profesional, disfruto de actividades que 
           enriquecen mi vida personal y desarrollan diferentes habilidades.

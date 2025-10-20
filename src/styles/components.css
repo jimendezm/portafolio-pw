@@ -1,70 +1,115 @@
+/* ===== COMPONENTES BASE ===== */
+
 /* Botones */
 .btn {
   display: inline-block;
   margin-top: 0.5rem;
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
   background: var(--c-verde-oscuro);
   color: white;
-  font-size: 0.9rem;
-  transition: background 0.2s ease, transform 0.2s ease;
+  font-size: 1rem;
+  font-weight: 500;
   border: none;
   cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  line-height: 1.2;
 }
 
 .btn:hover {
   background: var(--c-taupe);
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
+
 .btn:focus-visible {
   outline: 3px solid var(--c-terracota);
+  outline-offset: 2px;
 }
+
 .btn:active {
   transform: translateY(0);
 }
 
-/* Proyectos */
-.proyecto-card {
-  background: #fafafa;
-  border-radius: 8px;
+/* Variantes de botones */
+.btn-enviar {
+  width: 100%;
   padding: 1rem;
-  border: 1px solid #ddd;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.proyecto-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  font-size: 1.1rem;
 }
 
-/* Cards de cursos clicables */
-.curso-card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
+.btn-leer {
+  background: var(--c-terracota);
 }
-.curso-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+
+.btn-secundario {
+  background: transparent;
+  border: 2px solid var(--c-verde-oscuro);
+  color: var(--c-verde-oscuro);
 }
+
+.btn-secundario:hover {
+  background: var(--c-verde-oscuro);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* ===== COMPONENTES DE UI ===== */
 
 /* Tags y Badges */
+.tag, .badge {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
 .tag {
   background: var(--c-verde-oscuro);
   color: white;
-  font-size: 0.8rem;
-  padding: 0.2rem 0.6rem;
-  border-radius: 4px;
 }
 
 .badge {
   background: var(--c-terracota);
   color: white;
+}
+
+.curso-tag {
+  background: var(--c-terracota);
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
   font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.tech-tag {
+  background: var(--c-verde-oscuro);
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.nivel-tag {
+  background: var(--c-verde-oscuro);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.nueva-badge {
+  background: var(--c-terracota);
+  color: white;
   padding: 0.2rem 0.6rem;
-  border-radius: 50px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
 }
 
 /* Modal */
@@ -94,18 +139,6 @@
   animation: fadeInUp 0.3s ease;
 }
 
-/* Animación modal */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 /* Filtros */
 .filters {
   display: flex;
@@ -117,11 +150,11 @@
 .filters input {
   flex: 1;
   min-width: 200px;
-  padding: 0.6rem;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 0.9rem;
-  transition: border 0.2s ease;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 2px solid #e8e8e8;
+  font-size: 1rem;
+  transition: border 0.3s ease;
 }
 
 .filters input:focus {
@@ -129,262 +162,33 @@
   outline: none;
 }
 
-/* 🔹 Presentación con foto */
-.presentacion-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 80vh;
-}
+/* ===== COMPONENTES DE CARDS ===== */
 
-.presentacion-content {
-  display: flex;
-  align-items: center;
-  gap: 3rem;
-  flex-wrap: wrap; /* 🔑 hace que sea responsivo */
-  justify-content: center;
-}
-
-.foto-container {
-  flex-shrink: 0;
-  width: 260px;
-  height: 260px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 4px solid var(--c-terracota);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.foto-container:hover {
-  transform: scale(1.03);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
-}
-
-.foto-perfil {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.foto-container:hover .foto-perfil {
-  transform: scale(1.05);
-}
-
-/* 🔹 Texto presentación */
-.texto-presentacion {
-  max-width: 600px;
-  text-align: left;
-}
-
-.texto-presentacion h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  color: var(--c-marron-oscuro);
-  position: relative;
-}
-
-.texto-presentacion h2::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 60px;
-  height: 4px;
-  background: var(--c-terracota);
-  border-radius: 2px;
-}
-
-/* 🔹 Responsividad */
-@media (max-width: 768px) {
-  .presentacion-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .texto-presentacion {
-    max-width: 100%;
-    text-align: center;
-  }
-
-  .texto-presentacion h2 {
-    font-size: 2rem;
-  }
-}
-/* 🔹 Estilos para Recomendaciones */
-.recomendaciones-section {
-  background: linear-gradient(135deg, var(--c-beige) 0%, rgba(239, 217, 180, 0.1) 100%);
-}
-
-.recomendaciones-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.recomendaciones-descripcion {
-  text-align: center;
-  margin-bottom: 3rem;
-  font-size: 1.1rem;
-  color: var(--c-marron-oscuro);
-}
-
-/* Formulario */
-.form-container {
+/* Cards base */
+.proyecto-card, .curso-card, .recomendacion-card, .post-card, .meta-card {
   background: white;
-  padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  margin-bottom: 3rem;
-}
-
-.form-group {
-  margin-bottom: 1.5rem;
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 0.8rem;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: var(--c-terracota);
-}
-
-.btn-enviar {
-  background: var(--c-verde-oscuro);
-  width: 100%;
-  padding: 1rem;
-  font-size: 1rem;
-}
-
-.btn-enviar:hover {
-  background: var(--c-taupe);
-}
-
-/* Lista de recomendaciones */
-.recomendaciones-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-}
-
-.recomendacion-card {
-  background: white;
   padding: 1.5rem;
-  border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(214, 166, 146, 0.1);
 }
 
-.recomendacion-card:hover {
+.proyecto-card:hover, 
+.curso-card:hover, 
+.recomendacion-card:hover, 
+.post-card:hover, 
+.meta-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-.recomendacion-header {
+/* Cards específicas */
+.curso-card {
+  cursor: pointer;
+  height: auto;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 1rem;
-}
-
-.curso-tag {
-  background: var(--c-terracota);
-  color: white;
-  padding: 0.3rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
-}
-
-.recomendacion-mensaje {
-  font-style: italic;
-  margin-bottom: 1rem;
-  line-height: 1.6;
-}
-
-.recomendacion-footer {
-  text-align: right;
-  color: var(--c-taupe);
-  font-size: 0.9rem;
-}
-
-.empty-state {
-  text-align: center;
-  padding: 3rem;
-  color: var(--c-taupe);
-}
-
-/* 🔹 Estilos para Blog */
-.blog-section {
-  background: white;
-}
-
-.posts-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
-}
-
-.post-card {
-  background: var(--c-bg);
-  padding: 2rem;
-  border-radius: 12px;
-  border-left: 4px solid var(--c-verde-oscuro);
-  transition: transform 0.3s ease;
-}
-
-.post-card:hover {
-  transform: translateY(-5px);
-}
-
-.post-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 1rem;
-}
-
-.post-fecha {
-  color: var(--c-taupe);
-  font-size: 0.9rem;
-}
-
-.post-resumen {
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-}
-
-.post-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.btn-leer {
-  background: var(--c-terracota);
-}
-
-.btn-leer:hover {
-  background: var(--c-taupe);
-}
-
-/* 🔹 Estilos para Proyectos Personales */
-.proyectos-personales-section {
-  background: linear-gradient(135deg, rgba(214, 166, 146, 0.1) 0%, rgba(77, 97, 96, 0.1) 100%);
-}
-
-.proyectos-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
+  flex-direction: column;
 }
 
 .proyecto-personal-card {
@@ -399,260 +203,11 @@
   transform: translateY(-5px);
 }
 
-.proyecto-imagen {
-  height: 200px;
-  background: var(--c-taupe);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-}
-
-.proyecto-content {
-  padding: 1.5rem;
-}
-
-.tecnologias {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin: 1rem 0;
-}
-
-.tech-tag {
-  background: var(--c-verde-oscuro);
-  color: white;
-  padding: 0.3rem 0.8rem;
-  border-radius: 4px;
-  font-size: 0.8rem;
-}
-
-.proyecto-links {
-  display: flex;
-  gap: 1rem;
-}
-
-.btn-secundario {
-  background: transparent;
-  border: 2px solid var(--c-verde-oscuro);
-  color: var(--c-verde-oscuro);
-}
-
-.btn-secundario:hover {
-  background: var(--c-verde-oscuro);
-  color: white;
-}
-
-/* 🔹 Estilos para Hobbies */
-.hobbies-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-}
-
 .hobby-categoria {
   background: white;
   padding: 2rem;
   border-radius: 12px;
-  text-align: center;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.hobby-categoria h3 {
-  color: var(--c-verde-oscuro);
-  margin-bottom: 1rem;
-}
-
-.hobby-categoria ul {
-  list-style: none;
-  text-align: left;
-}
-
-.hobby-categoria li {
-  padding: 0.5rem 0;
-  border-bottom: 1px solid #f0f0f0;
-}
-
-.hobby-categoria li:last-child {
-  border-bottom: none;
-}
-
-/* 🔹 Diseño Responsivo Refinado */
-@media (max-width: 768px) {
-  .recomendaciones-grid,
-  .posts-grid,
-  .proyectos-grid,
-  .hobbies-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .form-container,
-  .post-card,
-  .recomendacion-card,
-  .hobby-categoria {
-    padding: 1.5rem;
-  }
-  
-  .proyecto-links {
-    flex-direction: column;
-  }
-  
-  .recomendacion-header {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  
-  .post-header {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  section {
-    padding: 3rem 1rem;
-  }
-  
-  .form-container,
-  .post-card,
-  .recomendacion-card,
-  .hobby-categoria {
-    padding: 1rem;
-  }
-}
-
-.hobbies-section {
-  background: linear-gradient(135deg, rgba(239, 217, 180, 0.1) 0%, rgba(214, 166, 146, 0.05) 100%);
-}
-
-.hobbies-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.hobbies-descripcion {
-  text-align: center;
-  margin-bottom: 3rem;
-  font-size: 1.1rem;
-  color: var(--c-marron-oscuro);
-  line-height: 1.6;
-}
-
-.hobbies-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2.5rem;
-  margin-bottom: 3rem;
-}
-
-.hobby-categoria {
-  background: white;
-  padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(214, 166, 146, 0.1);
-}
-
-.hobby-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
-  border-bottom: 2px solid var(--c-beige);
-}
-
-.hobby-icon {
-  font-size: 2rem;
-}
-
-.hobby-header h3 {
-  color: var(--c-verde-oscuro);
-  margin: 0;
-  font-size: 1.4rem;
-}
-
-.hobby-items {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.hobby-item {
-  padding: 1.2rem;
-  background: var(--c-bg);
-  border-radius: 12px;
-  border-left: 4px solid var(--c-terracota);
-}
-
-.hobby-item h4 {
-  color: var(--c-marron-oscuro);
-  margin-bottom: 0.5rem;
-  font-size: 1.1rem;
-}
-
-.hobby-item p {
-  margin-bottom: 0.8rem;
-  color: var(--c-marron-oscuro);
-  line-height: 1.5;
-}
-
-.nivel-tag {
-  background: var(--c-verde-oscuro);
-  color: white;
-  padding: 0.3rem 0.8rem;
-  border-radius: 15px;
-  font-size: 0.8rem;
-  font-weight: 500;
-}
-
-.libros-lista ul {
-  list-style: none;
-  margin-top: 0.5rem;
-}
-
-.libros-lista li {
-  padding: 0.3rem 0;
-  color: var(--c-taupe);
-  font-size: 0.9rem;
-}
-
-.hobbies-reflexion {
-  background: white;
-  padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  border-left: 5px solid var(--c-verde-oscuro);
-}
-
-.hobbies-reflexion h3 {
-  color: var(--c-verde-oscuro);
-  margin-bottom: 1rem;
-}
-
-/* 🔹 Estilos para Experiencias TEC */
-.experiencias-section {
-  background: white;
-}
-
-.experiencias-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.experiencias-descripcion {
-  text-align: center;
-  margin-bottom: 3rem;
-  font-size: 1.1rem;
-  color: var(--c-marron-oscuro);
-  line-height: 1.6;
-}
-
-.experiencias-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 2.5rem;
-  margin-bottom: 3rem;
 }
 
 .experiencia-card {
@@ -687,14 +242,302 @@
   z-index: 2;
 }
 
-.experiencia-header {
-  padding: 1.5rem 2rem 0;
+/* ===== COMPONENTES DE FORMULARIOS ===== */
+
+.form-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
 }
 
-.experiencia-header h3 {
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-input, .form-textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #e8e8e8;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  background: #fafafa;
+}
+
+.form-input:focus, .form-textarea:focus {
+  outline: none;
+  border-color: var(--c-terracota);
+  background: white;
+  box-shadow: 0 0 0 3px rgba(214, 166, 146, 0.1);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* ===== COMPONENTES DE LAYOUT ===== */
+
+/* Presentación */
+.presentacion-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  padding: 2rem;
+}
+
+.presentacion-content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.foto-container {
+  flex-shrink: 0;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--c-terracota);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.foto-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.foto-perfil {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.foto-container:hover .foto-perfil {
+  transform: scale(1.1);
+}
+
+.texto-presentacion {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+}
+
+.texto-presentacion h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--c-marron-oscuro);
+  position: relative;
+  line-height: 1.2;
+}
+
+.texto-presentacion h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: var(--c-terracota);
+  border-radius: 2px;
+}
+
+/* Grids */
+.cursos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.proyectos-container {
+  display: grid;
+  gap: 1rem;
+}
+
+.proyectos-grid,
+.recomendaciones-grid,
+.posts-grid,
+.hobbies-grid,
+.experiencias-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.proyectos-grid {
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.recomendaciones-grid {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.posts-grid {
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.hobbies-grid {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.experiencias-grid {
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+}
+
+.metas-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ===== COMPONENTES ESPECÍFICOS ===== */
+
+/* Recomendaciones */
+.recomendaciones-section {
+  background: linear-gradient(135deg, var(--c-beige) 0%, rgba(239, 217, 180, 0.1) 100%);
+}
+
+.recomendaciones-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.recomendaciones-descripcion {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+  color: var(--c-marron-oscuro);
+  line-height: 1.6;
+}
+
+.recomendacion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.recomendacion-mensaje {
+  font-style: italic;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: var(--c-marron-oscuro);
+}
+
+.recomendacion-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  color: var(--c-taupe);
+  font-size: 0.9rem;
+}
+
+/* Hobbies */
+.hobbies-section {
+  background: linear-gradient(135deg, rgba(239, 217, 180, 0.1) 0%, rgba(214, 166, 146, 0.05) 100%);
+}
+
+.hobbies-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.hobbies-descripcion {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+  color: var(--c-marron-oscuro);
+  line-height: 1.6;
+}
+
+.hobby-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--c-beige);
+}
+
+.hobby-icon {
+  font-size: 2rem;
+}
+
+.hobby-header h3 {
   color: var(--c-verde-oscuro);
-  font-size: 1.3rem;
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.hobby-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hobby-item {
+  padding: 1.5rem;
+  background: var(--c-bg);
+  border-radius: 12px;
+  border-left: 4px solid var(--c-terracota);
+}
+
+.hobby-item h4 {
+  color: var(--c-marron-oscuro);
   margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+}
+
+.libros-lista ul {
+  list-style: none;
+  margin-top: 0.8rem;
+}
+
+.libros-lista li {
+  padding: 0.4rem 0;
+  color: var(--c-taupe);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.hobbies-reflexion {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  border-left: 5px solid var(--c-verde-oscuro);
+  margin-top: 2rem;
+}
+
+/* Experiencias TEC */
+.experiencias-section {
+  background: white;
+}
+
+.experiencias-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.experiencia-header {
+  padding: 1.5rem 1.5rem 0;
 }
 
 .experiencia-meta {
@@ -709,7 +552,7 @@
 .experiencia-tipo {
   background: var(--c-beige);
   color: var(--c-marron-oscuro);
-  padding: 0.3rem 0.8rem;
+  padding: 0.4rem 1rem;
   border-radius: 15px;
   font-size: 0.8rem;
   font-weight: 500;
@@ -722,24 +565,18 @@
 }
 
 .experiencia-imagen {
-  height: 180px;
+  height: 160px;
   background: linear-gradient(135deg, var(--c-taupe), var(--c-verde-oscuro));
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 1rem 2rem 0;
+  margin: 1rem 1.5rem 0;
   border-radius: 12px;
   overflow: hidden;
 }
 
 .experiencia-content {
-  padding: 1.5rem 2rem 2rem;
-}
-
-.experiencia-descripcion {
-  margin-bottom: 1.2rem;
-  line-height: 1.6;
-  color: var(--c-marron-oscuro);
+  padding: 1.5rem;
 }
 
 .proyecto-destacado {
@@ -750,46 +587,420 @@
   border-left: 3px solid var(--c-terracota);
 }
 
-.aprendizajes-section h4,
-.habilidades-section h4 {
-  color: var(--c-verde-oscuro);
-  margin-bottom: 0.8rem;
-  font-size: 1.1rem;
-}
-
 .aprendizajes-lista {
   list-style: none;
   margin-bottom: 1.5rem;
 }
 
 .aprendizajes-lista li {
-  padding: 0.3rem 0;
+  padding: 0.4rem 0;
   color: var(--c-marron-oscuro);
+  line-height: 1.4;
 }
 
 .habilidades-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
-}
-
-.habilidad-tag {
-  background: var(--c-verde-oscuro);
-  color: white;
-  padding: 0.4rem 1rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 500;
+  gap: 0.5rem;
 }
 
 .reflexion-final {
   background: linear-gradient(135deg, var(--c-beige), rgba(214, 166, 146, 0.1));
-  padding: 2.5rem;
+  padding: 2rem;
   border-radius: 16px;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Metas Profesionales */
+.metas-section {
+  background: linear-gradient(135deg, rgba(77, 97, 96, 0.05) 0%, rgba(41, 37, 34, 0.03) 100%);
+}
+
+.metas-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.metas-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.periodo-metas {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(214, 166, 146, 0.1);
+}
+
+.periodo-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--c-beige);
+}
+
+.periodo-icon {
+  font-size: 2rem;
+}
+
+.periodo-header h3 {
+  color: var(--c-marron-oscuro);
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.meta-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.progreso-barra {
+  position: relative;
+  width: 100px;
+  height: 20px;
+  background: #e8e8e8;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.progreso-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--c-terracota), var(--c-verde-oscuro));
+  border-radius: 10px;
+  transition: width 0.8s ease;
+}
+
+.progreso-texto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.acciones-section {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(214, 166, 146, 0.2);
+}
+
+.acciones-lista {
+  list-style: none;
+  margin: 0.5rem 0 0 0;
+  padding: 0;
+}
+
+.acciones-lista li {
+  padding: 0.4rem 0;
+  color: var(--c-taupe);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  border-bottom: 1px solid rgba(214, 166, 146, 0.1);
+}
+
+.acciones-lista li:last-child {
+  border-bottom: none;
+}
+
+.filosofia-crecimiento {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
   text-align: center;
 }
 
-.reflexion-final h3 {
-  color: var(--c-verde-oscuro);
+.filosofia-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.filosofia-item {
+  padding: 1.5rem;
+  background: var(--c-bg);
+  border-radius: 12px;
+  border-top: 4px solid var(--c-terracota);
+}
+
+.filosofia-item h4 {
+  color: var(--c-marron-oscuro);
   margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+/* ===== ANIMACIONES ===== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablets y dispositivos medianos */
+@media (max-width: 1024px) {
+  .presentacion-content {
+    gap: 2rem;
+  }
+  
+  .foto-container {
+    width: 240px;
+    height: 240px;
+  }
+  
+  .texto-presentacion h2 {
+    font-size: 2.2rem;
+  }
+  
+  .metas-lista {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+}
+
+/* Tablets pequeñas y móviles grandes */
+@media (max-width: 768px) {
+  .presentacion-container {
+    min-height: auto;
+    padding: 3rem 1.5rem;
+  }
+  
+  .presentacion-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  
+  .foto-container {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .texto-presentacion {
+    text-align: center;
+  }
+  
+  .texto-presentacion h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .texto-presentacion h2 {
+    font-size: 2rem;
+  }
+  
+  /* Grids responsivos */
+  .cursos-container,
+  .proyectos-grid,
+  .recomendaciones-grid,
+  .posts-grid,
+  .hobbies-grid,
+  .experiencias-grid,
+  .metas-lista {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  /* Padding reducido en móviles */
+  .recomendaciones-container,
+  .hobbies-container,
+  .experiencias-container,
+  .metas-container {
+    padding: 0 1.5rem;
+  }
+  
+  .form-container,
+  .recomendacion-card,
+  .post-card,
+  .hobby-categoria,
+  .experiencia-card,
+  .periodo-metas,
+  .meta-card {
+    padding: 1.5rem;
+  }
+  
+  .hobby-item {
+    padding: 1.2rem;
+  }
+  
+  /* Modal responsive */
+  .modal-content {
+    padding: 1.5rem;
+    width: 95%;
+    margin: 1rem;
+  }
+  
+  /* Headers flex en columna */
+  .recomendacion-header,
+  .experiencia-meta,
+  .meta-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+  
+  .proyecto-links {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .recomendacion-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .progreso-barra {
+    width: 100%;
+    max-width: 150px;
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+  section {
+    padding: 3rem 1rem;
+  }
+  
+  .presentacion-container {
+    padding: 2rem 1rem;
+  }
+  
+  .foto-container {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .texto-presentacion h2 {
+    font-size: 1.8rem;
+  }
+  
+  .recomendaciones-container,
+  .hobbies-container,
+  .experiencias-container,
+  .metas-container {
+    padding: 0 1rem;
+  }
+  
+  .form-container,
+  .recomendacion-card,
+  .post-card,
+  .hobby-categoria,
+  .experiencia-card,
+  .periodo-metas,
+  .meta-card,
+  .filosofia-crecimiento {
+    padding: 1.2rem;
+  }
+  
+  .hobby-item {
+    padding: 1rem;
+  }
+  
+  .experiencia-header,
+  .experiencia-content {
+    padding: 1.2rem;
+  }
+  
+  .experiencia-imagen {
+    margin: 1rem 1.2rem 0;
+    height: 140px;
+  }
+  
+  .modal-content {
+    padding: 1rem;
+    width: 95%;
+  }
+  
+  .btn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  
+  .filosofia-content {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .filosofia-item {
+    padding: 1.2rem;
+  }
+}
+
+/* Muy pequeños */
+@media (max-width: 360px) {
+  .presentacion-content {
+    gap: 1.5rem;
+  }
+  
+  .foto-container {
+    width: 160px;
+    height: 160px;
+  }
+  
+  .texto-presentacion h2 {
+    font-size: 1.6rem;
+  }
+  
+  .form-container,
+  .recomendacion-card,
+  .post-card,
+  .hobby-categoria,
+  .experiencia-card,
+  .periodo-metas,
+  .meta-card {
+    padding: 1rem;
+  }
+  
+  .modal-content {
+    padding: 0.8rem;
+  }
+}
+
+/* ===== UTILIDADES ===== */
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: var(--c-taupe);
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.recomendaciones-info {
+  background: rgba(239, 217, 180, 0.2);
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+  border-left: 4px solid var(--c-verde-oscuro);
+  font-size: 0.9rem;
 }

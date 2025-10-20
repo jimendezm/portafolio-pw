@@ -85,6 +85,13 @@ export default function Header() {
             Experiencias TEC
           </a>
           <a
+            href='#metas'
+            className={activeSection === "metas" ? "active" : ""}
+            onClick={handleLinkClick}
+          >
+            Metas
+          </a>
+          <a
             href="#recomendaciones"
             className={activeSection === "recomendaciones" ? "active" : ""}
             onClick={handleLinkClick}

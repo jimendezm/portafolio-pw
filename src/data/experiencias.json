@@ -1,0 +1,40 @@
+{
+  "experiencias": [
+    {
+      "id": 1,
+      "titulo": "Inspira IT - P&G",
+      "tipo": "Evento exclusivo para mujeres",
+      "fecha": "2023",
+      "descripcion": "Participé en este evento exclusivo organizado por Procter & Gamble dirigido a mujeres en tecnología. Fue una experiencia inspiradora donde conocí a profesionales destacadas y aprendí sobre oportunidades de carrera en una de las empresas más importantes del mundo.",
+      "aprendizajes": [
+        "Networking con mujeres líderes en TI",
+        "Casos reales de transformación digital",
+        "Estrategias para romper barreras de género en tech",
+        "Procesos de reclutamiento en multinacionales"
+      ],
+      "habilidades": ["Networking", "Liderazgo femenino", "Carrera corporativa"],
+      "destacado": true
+    },
+    {
+      "id": 2,
+      "titulo": "Evento BAM - Microsoft",
+      "tipo": "Evento de diversidad e inclusión",
+      "fecha": "2024",
+      "descripcion": "Asistí al evento organizado por Blacks at Microsoft (BAM) donde se abordaron temas de ciberseguridad e inteligencia artificial. Fue una experiencia enriquecedora que incluyó talleres prácticos con librerías de Python para proyectos de machine learning.",
+      "aprendizajes": [
+        "Perspectivas sobre diversidad en tecnología",
+        "Talleres prácticos de ciberseguridad",
+        "Introducción a IA con Python",
+        "Scikit-learn para proyectos básicos",
+        "Networking con profesionales de Microsoft"
+      ],
+      "habilidades": ["Python", "Ciberseguridad", "Machine Learning", "Diversidad e inclusión"],
+      "proyecto": "Participé en taller práctico de machine learning",
+      "destacado": true
+    }
+  ],
+  "reflexion": {
+    "titulo": "Impacto en mi carrera",
+    "contenido": "Estas experiencias han sido fundamentales para definir mi camino profesional. Eventos como Inspira IT me mostraron el poder de la representación femenina en tecnología, mientras que el evento BAM de Microsoft amplió mi perspectiva sobre diversidad e inclusión en el sector tech. Cada actividad ha contribuido a formar la profesional que soy hoy."
+  }
+}

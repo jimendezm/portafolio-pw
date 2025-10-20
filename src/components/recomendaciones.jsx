@@ -74,7 +74,7 @@ export default function Recomendaciones() {
   return (
     <section id="recomendaciones" className="recomendaciones-section">
       <div className="recomendaciones-container">
-        <h2>Recomendaciones de Compañeros</h2>
+        <h2><strong>Recomendaciones</strong></h2>
         <p className="recomendaciones-descripcion">
           {recomendacionesData.descripcion}
           ¡Tu opinión es muy valiosa!
