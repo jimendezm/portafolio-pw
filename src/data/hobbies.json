@@ -1,0 +1,42 @@
+{
+  "hobbies": [
+    {
+      "categoria": "Deportes",
+      "items": [
+        {
+          "nombre": "Voleibol",
+          "descripcion": "Practico voleibol desde hace 3 años, disfrutando del trabajo en equipo y la competencia sana. También participo en ligas nacionales de segunda división.",
+          "nivel": "Intermedio"
+        }
+      ]
+    },
+    {
+      "categoria": "Lectura",
+      "items": [
+        {
+          "nombre": "Finanzas Personales",
+          "descripcion": "Me apasiona aprender sobre gestión financiera, inversiones y economía.",
+          "libros": ["Padre Rico, Padre Pobre"]
+        },
+        {
+          "nombre": "Romance Contemporáneo",
+          "descripcion": "Historias que exploran relaciones humanas y desarrollo personal.",
+          "libros": ["Saga de Hush Hush", "La Selección"]
+        }
+      ]
+    },
+    {
+      "categoria": "Tecnología",
+      "items": [
+        {
+          "nombre": "Videojuegos",
+          "descripcion": "Nintendo es mi consola favorita, disfruto de juegos que desafían mi estrategia y reflejos."
+        }
+      ]
+    }
+  ],
+  "reflexion": {
+    "titulo": "¿Por qué estos hobbies?",
+    "contenido": "El voleibol me enseña trabajo en equipo y disciplina, mientras que la lectura expande mi perspectiva y conocimiento en diversas áreas. La combinación de actividad física y mental mantiene un balance saludable en mi vida."
+  }
+}

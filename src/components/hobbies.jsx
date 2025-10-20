@@ -1,57 +1,7 @@
+import hobbiesData from "../data/hobbies.json";
+
 export default function Hobbies() {
-  const hobbies = [
-    {
-      categoria: "Deportes",
-      icono: "🏐",
-      items: [
-        {
-          nombre: "Voleibol",
-          descripcion: "Practico voleibol desde hace 3 años, disfrutando del trabajo en equipo y la competencia sana.",
-          nivel: "Intermedio"
-        }
-      ]
-    },
-    {
-      categoria: "Lectura",
-      icono: "📚",
-      items: [
-        {
-          nombre: "Finanzas Personales",
-          descripcion: "Me apasiona aprender sobre gestión financiera, inversiones y economía.",
-          libros: ["Padre Rico, Padre Pobre", "Los secretos de la mente millonaria"]
-        },
-        {
-          nombre: "Misterio y Suspenso",
-          descripcion: "Disfruto de novelas que mantienen la intriga hasta la última página.",
-          libros: ["Sherlock Holmes", "La chica del tren"]
-        },
-        {
-          nombre: "Romance Contemporáneo",
-          descripcion: "Historias que exploran relaciones humanas y desarrollo personal.",
-          libros: ["Bajo la misma estrella", "Eleanor & Park"]
-        },
-        {
-          nombre: "Acción y Aventura",
-          descripcion: "Narrativas dinámicas llenas de emoción y giros inesperados.",
-          libros: ["Jurassic Park", "El código Da Vinci"]
-        }
-      ]
-    },
-    {
-      categoria: "Tecnología",
-      icono: "💻",
-      items: [
-        {
-          nombre: "Programación Creativa",
-          descripcion: "Diseño pequeños proyectos que combinan código con arte digital."
-        },
-        {
-          nombre: "Videojuegos",
-          descripcion: "Juego títulos de estrategia y aventuras que desafían la mente."
-        }
-      ]
-    }
-  ];
+  const { hobbies, reflexion } = hobbiesData;
 
   return (
     <section id="hobbies" className="hobbies-section">
@@ -66,7 +16,6 @@ export default function Hobbies() {
           {hobbies.map((hobby, index) => (
             <div key={index} className="hobby-categoria">
               <div className="hobby-header">
-                <span className="hobby-icon">{hobby.icono}</span>
                 <h3>{hobby.categoria}</h3>
               </div>
               
@@ -100,12 +49,8 @@ export default function Hobbies() {
         </div>
         
         <div className="hobbies-reflexion">
-          <h3>¿Por qué estos hobbies?</h3>
-          <p>
-            El voleibol me enseña trabajo en equipo y disciplina, mientras que la lectura 
-            expande mi perspectiva y conocimiento en diversas áreas. La combinación de 
-            actividad física y mental mantiene un balance saludable en mi vida.
-          </p>
+          <h3>{reflexion.titulo}</h3>
+          <p>{reflexion.contenido}</p>
         </div>
       </div>
     </section>

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import recomendacionesData from '../data/recomendaciones.json';
 
 export default function Recomendaciones() {
   const [recomendaciones, setRecomendaciones] = useState([]);
@@ -8,17 +9,35 @@ export default function Recomendaciones() {
     mensaje: ''
   });
 
-  // Cargar recomendaciones desde localStorage
+  // Cargar recomendaciones iniciales del JSON y del localStorage
   useEffect(() => {
     const stored = localStorage.getItem('recomendaciones');
     if (stored) {
-      setRecomendaciones(JSON.parse(stored));
+      // Combinar recomendaciones del JSON con las del localStorage
+      const recomendacionesStorage = JSON.parse(stored);
+      const todasRecomendaciones = [
+        ...recomendacionesData.recomendacionesIniciales,
+        ...recomendacionesStorage
+      ];
+      setRecomendaciones(todasRecomendaciones);
+    } else {
+      // Solo cargar las del JSON si no hay nada en localStorage
+      setRecomendaciones(recomendacionesData.recomendacionesIniciales);
     }
   }, []);
 
-  // Guardar en localStorage cuando cambien las recomendaciones
+  // Guardar solo las nuevas recomendaciones en localStorage
   useEffect(() => {
-    localStorage.setItem('recomendaciones', JSON.stringify(recomendaciones));
+    // Filtrar solo las recomendaciones que no están en el JSON inicial
+    const nuevasRecomendaciones = recomendaciones.filter(
+      rec => !recomendacionesData.recomendacionesIniciales.some(
+        recInicial => recInicial.id === rec.id
+      )
+    );
+    
+    if (nuevasRecomendaciones.length > 0) {
+      localStorage.setItem('recomendaciones', JSON.stringify(nuevasRecomendaciones));
+    }
   }, [recomendaciones]);
 
   const handleSubmit = (e) => {
@@ -27,15 +46,21 @@ export default function Recomendaciones() {
     if (nuevaRecomendacion.nombre && nuevaRecomendacion.mensaje) {
       const recomendacion = {
         ...nuevaRecomendacion,
-        id: Date.now(),
-        fecha: new Date().toLocaleDateString('es-CR'),
+        id: Date.now(), // ID único basado en timestamp
+        fecha: new Date().toLocaleDateString('es-CR', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        }),
         estado: 'aprobado'
       };
       
       setRecomendaciones([recomendacion, ...recomendaciones]);
       setNuevaRecomendacion({ nombre: '', curso: '', mensaje: '' });
       
-      alert('¡Gracias por tu recomendación!');
+      alert('¡Gracias por tu recomendación! Tu mensaje ha sido enviado correctamente.');
+    } else {
+      alert('Por favor completa al menos tu nombre y el mensaje de recomendación.');
     }
   };
 
@@ -51,8 +76,7 @@ export default function Recomendaciones() {
       <div className="recomendaciones-container">
         <h2>Recomendaciones de Compañeros</h2>
         <p className="recomendaciones-descripcion">
-          Estas son algunas de las recomendaciones y comentarios que mis compañeros 
-          han compartido sobre mi trabajo y colaboración en proyectos académicos.
+          {recomendacionesData.descripcion}
           ¡Tu opinión es muy valiosa!
         </p>
 
@@ -122,11 +146,23 @@ export default function Recomendaciones() {
                   <p className="recomendacion-mensaje">"{recomendacion.mensaje}"</p>
                   <div className="recomendacion-footer">
                     <span className="fecha">{recomendacion.fecha}</span>
+                    {recomendacion.id > 3 && (
+                      <span className="nueva-badge">Nueva</span>
+                    )}
                   </div>
                 </div>
               ))}
             </div>
           )}
+        </div>
+
+        {/* Información sobre las recomendaciones */}
+        <div className="recomendaciones-info">
+          <p>
+            <strong>Nota:</strong> Las recomendaciones con el badge "Nueva" son comentarios 
+            recientes enviados a través del formulario. Las demás son recomendaciones 
+            de proyectos académicos anteriores.
+          </p>
         </div>
       </div>
     </section>

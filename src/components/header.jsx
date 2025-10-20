@@ -70,6 +70,20 @@ export default function Header() {
           >
             Información
           </a>
+          <a 
+            href="#hobbies" 
+            className={activeSection === "hobbies" ? "active" : ""}
+            onClick={handleLinkClick}
+          >
+            Hobbies
+          </a>
+          <a 
+            href="#experiencias-tec" 
+            className={activeSection === "experiencias-tec" ? "active" : ""}
+            onClick={handleLinkClick}
+          >
+            Experiencias TEC
+          </a>
           <a
             href="#recomendaciones"
             className={activeSection === "recomendaciones" ? "active" : ""}

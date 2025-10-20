@@ -1,0 +1,29 @@
+{
+  "descripcion": "Recomendaciones y comentarios de compañeros sobre mi trabajo y colaboración en proyectos académicos",
+  "recomendacionesIniciales": [
+    {
+      "id": 1,
+      "nombre": "María Rodríguez",
+      "curso": "IC8057 - Introducción al Desarrollo de Páginas Web",
+      "mensaje": "Jimena fue una excelente compañera de equipo en nuestro proyecto de desarrollo web. Su atención al detalle y habilidades de organización fueron clave para el éxito del proyecto.",
+      "fecha": "2024-01-15",
+      "estado": "aprobado"
+    },
+    {
+      "id": 2,
+      "nombre": "Carlos López",
+      "curso": "IC4702 - Bases de Datos",
+      "mensaje": "Trabajar con Jimena en el proyecto de bases de datos fue muy enriquecedor. Su capacidad para resolver problemas complejos y su dedicación son admirables.",
+      "fecha": "2023-11-20",
+      "estado": "aprobado"
+    },
+    {
+      "id": 3,
+      "nombre": "Ana Martínez",
+      "curso": "IC1800 - Introducción a la Programación",
+      "mensaje": "Jimena siempre está dispuesta a ayudar a sus compañeros. Su paciencia para explicar conceptos difíciles la convierte en una gran colaboradora.",
+      "fecha": "2023-09-10",
+      "estado": "aprobado"
+    }
+  ]
+}
