@@ -8,7 +8,7 @@ export default function Recomendaciones() {
     mensaje: ''
   });
 
-  // Cargar recomendaciones desde localStorage al iniciar
+  // Cargar recomendaciones desde localStorage
   useEffect(() => {
     const stored = localStorage.getItem('recomendaciones');
     if (stored) {
@@ -29,7 +29,7 @@ export default function Recomendaciones() {
         ...nuevaRecomendacion,
         id: Date.now(),
         fecha: new Date().toLocaleDateString('es-CR'),
-        estado: 'pendiente' // Para moderación si se desea
+        estado: 'aprobado'
       };
       
       setRecomendaciones([recomendacion, ...recomendaciones]);
@@ -53,6 +53,7 @@ export default function Recomendaciones() {
         <p className="recomendaciones-descripcion">
           Estas son algunas de las recomendaciones y comentarios que mis compañeros 
           han compartido sobre mi trabajo y colaboración en proyectos académicos.
+          ¡Tu opinión es muy valiosa!
         </p>
 
         {/* Formulario de recomendaciones */}
@@ -63,10 +64,11 @@ export default function Recomendaciones() {
               <input
                 type="text"
                 name="nombre"
-                placeholder="Tu nombre"
+                placeholder="Tu nombre completo"
                 value={nuevaRecomendacion.nombre}
                 onChange={handleChange}
                 required
+                className="form-input"
               />
             </div>
             
@@ -74,9 +76,10 @@ export default function Recomendaciones() {
               <input
                 type="text"
                 name="curso"
-                placeholder="Curso (opcional)"
+                placeholder="Curso donde nos conocimos (opcional)"
                 value={nuevaRecomendacion.curso}
                 onChange={handleChange}
+                className="form-input"
               />
             </div>
             
@@ -88,6 +91,7 @@ export default function Recomendaciones() {
                 onChange={handleChange}
                 rows="4"
                 required
+                className="form-textarea"
               ></textarea>
             </div>
             
