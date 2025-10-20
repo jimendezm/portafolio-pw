@@ -70,6 +70,13 @@ export default function Header() {
           >
             Información
           </a>
+          <a
+            href="#recomendaciones"
+            className={activeSection === "recomendaciones" ? "active" : ""}
+            onClick={handleLinkClick}
+          >
+            Recomendaciones
+          </a>
         </nav>
       </div>
     </header>
