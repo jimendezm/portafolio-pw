@@ -227,9 +227,9 @@
     ]
   },
   {
-    "curso": "IC4003 - Introducción al Desarrollo de Páginas Web",
+    "curso": "IC8057 - Introducción al Desarrollo de Páginas Web",
     "semestre": "2025-II",
-    "descripcion": "Fundamentos de HTML, CSS y JavaScript aplicados al desarrollo de páginas web con énfasis en manipulación del DOM.",
+    "descripcion": "Fundamentos de HTML, CSS y JavaScript aplicados al desarrollo de páginas web con énfasis en manipulación del DOM y desarrollo de APIs.",
     "trabajos": [
       {
         "nombre": "Laboratorio 6 - Edición del DOM",
@@ -238,6 +238,83 @@
         "fecha": "2025-09-19",
         "tecnologias": ["HTML", "CSS", "JavaScript"],
         "repositorio": "https://github.com/jimendezm/Lab6.git",
+        "sitio": null
+      },
+      {
+        "nombre": "Laboratorio 8 - API REST con Express",
+        "tipo": "Laboratorio",
+        "descripcion": "Desarrollo de API REST con Express.js y pruebas con Postman.",
+        "fecha": "2025-10-15",
+        "tecnologias": ["Node.js", "Express", "REST API", "Postman", "JWT"],
+        "repositorio": "https://github.com/Chedrick343/Laboratorio-8-desarrollo-web.git",
+        "sitio": null
+      },
+      {
+        "nombre": "Laboratorio 9 - GraphQL API",
+        "tipo": "Laboratorio",
+        "descripcion": "Migración de endpoints REST a GraphQL, definiendo esquema con consultas y mutaciones equivalentes, conservando control de acceso con JWT.",
+        "fecha": "2025-11-05",
+        "tecnologias": ["Node.js", "GraphQL", "Express", "JWT"],
+        "repositorio": "https://github.com/jimendezm/Laboratorio9-desarrollo-web.git",
+        "sitio": null
+      }
+    ]
+  },
+  {
+    "curso": "IC4302 - Bases de Datos II",
+    "semestre": "2025-II",
+    "descripcion": "Curso avanzado de bases de datos que cubre replicación, optimización de consultas y desarrollo de APIs complejas.",
+    "trabajos": [
+      {
+        "nombre": "Proyecto 1 - API con WideWorldImporters",
+        "tipo": "Proyecto",
+        "descripcion": "Desarrollo de API con consultas avanzadas sobre la base de datos WideWorldImporters.",
+        "fecha": "2025-09-30",
+        "tecnologias": [".NET", "SQL Server", "REST API"],
+        "repositorio": "https://github.com/2025-Semestre-2/proyecto-1-jimendezm.git",
+        "sitio": null
+      },
+      {
+        "nombre": "Tarea 1 - API de AdventureWorks",
+        "tipo": "Tarea",
+        "descripcion": "Implementación de API para consultas sobre la base de datos AdventureWorks.",
+        "fecha": "2025-10-10",
+        "tecnologias": [".NET", "SQL Server", "REST API"],
+        "repositorio": "https://github.com/2025-Semestre-2/tarea-1-jimendezm.git",
+        "sitio": null
+      },
+      {
+        "nombre": "Investigación - Replicación de Bases de Datos",
+        "tipo": "Investigación",
+        "descripcion": "Creación de ambiente con dos bases de datos AdventureWorks en un mismo servidor, configuradas para replicar acciones (insertar, modificar, eliminar) en las tablas Production.Product, Production.ProductCategory y Production.ProductSubcategory.",
+        "fecha": "2025-11-20",
+        "tecnologias": ["SQL Server", "Replication", "AdventureWorks"],
+        "repositorio": null,
+        "sitio": null
+      }
+    ]
+  },
+  {
+    "curso": "IC5701 - Compiladores e Intérpretes",
+    "semestre": "2025-II",
+    "descripcion": "Diseño e implementación de compiladores e intérpretes, cubriendo análisis léxico y sintáctico.",
+    "trabajos": [
+      {
+        "nombre": "Tarea 1 - Gramática BNF",
+        "tipo": "Tarea",
+        "descripcion": "Definición de gramática BNF para lenguaje propuesto por el profesor.",
+        "fecha": "2025-09-25",
+        "tecnologias": ["BNF", "Teoría de Lenguajes"],
+        "repositorio": "https://github.com/jimendezm/tarea1-ce.git",
+        "sitio": null
+      },
+      {
+        "nombre": "Proyecto 1 - Analizador Léxico y Sintáctico",
+        "tipo": "Proyecto",
+        "descripcion": "Desarrollo de analizador léxico y sintáctico para la gramática definida en la Tarea 1.",
+        "fecha": "2025-10-30",
+        "tecnologias": ["Python", "Lex", "Yacc", "Compiladores"],
+        "repositorio": "https://github.com/RicardoArce2404/proyecto-1-ci.git",
         "sitio": null
       }
     ]
