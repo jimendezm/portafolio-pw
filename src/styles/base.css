@@ -5,9 +5,9 @@
   box-sizing: border-box;
 }
 
-
-/* 🔹 Variables globales */
+/* 🔹 Variables globales - Modo Claro y Oscuro */
 :root {
+  /* Colores modo claro */
   --c-beige: #efd9b4;
   --c-terracota: #d6a692;
   --c-taupe: #a39081;
@@ -15,20 +15,29 @@
   --c-marron-oscuro: #292522;
   --c-bg: #f9f7f4;
   --c-text: #333;
+  --c-card-bg: #ffffff;
+  --c-shadow: rgba(0, 0, 0, 0.1);
+  --c-border: rgba(214, 166, 146, 0.2);
+  
+  /* Colores modo oscuro */
+  --c-dark-bg: #1a1a1a;
+  --c-dark-text: #e0e0e0;
+  --c-dark-card: #2d2d2d;
+  --c-dark-shadow: rgba(0, 0, 0, 0.3);
+  --c-dark-border: #444;
+  --c-dark-accent: #d6a692;
+  
   --font-main: "Segoe UI", Arial, sans-serif;
 }
 
-#root {
-  max-width: 100%;
-  margin: 0 auto;
-  align-items: center;
-}
-
-/* 🔹 Estructura base */
-html,
-body {
-  width: 100%;
-  min-height: 100%;
+/* Modo oscuro */
+[data-theme="dark"] {
+  --c-bg: var(--c-dark-bg);
+  --c-text: var(--c-dark-text);
+  --c-card-bg: var(--c-dark-card);
+  --c-shadow: var(--c-dark-shadow);
+  --c-marron-oscuro: var(--c-dark-text);
+  --c-border: var(--c-dark-border);
 }
 
 body {
@@ -37,17 +46,22 @@ body {
   color: var(--c-text);
   line-height: 1.6;
   scroll-behavior: smooth;
-  overflow-x: hidden; /* evita scroll horizontal molesto */
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+  align-items: center;
 }
 
 /* 🔹 Tipografía */
-h1,
-h2,
-h3,
-h4 {
+h1, h2, h3, h4 {
   font-weight: 600;
   color: var(--c-marron-oscuro);
   line-height: 1.2;
+  transition: color 0.3s ease;
 }
 
 p {
@@ -60,6 +74,7 @@ a {
   text-decoration: none;
   transition: color 0.3s ease;
 }
+
 a:hover {
   color: var(--c-terracota);
 }

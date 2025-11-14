@@ -60,6 +60,19 @@ export default function ExperienciasTEC() {
                     ))}
                   </div>
                 </div>
+
+                {experiencia.enlace && (
+                  <div className="experiencia-enlace">
+                    <a 
+                      href={experiencia.enlace} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="btn btn-outline"
+                    >
+                      Más información
+                    </a>
+                  </div>
+                )}
               </div>
             </div>
           ))}

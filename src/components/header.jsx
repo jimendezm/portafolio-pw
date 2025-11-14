@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -38,15 +39,18 @@ export default function Header() {
           <span>Portafolio</span>
         </div>
         
-        <button
-          className={`menu-btn ${open ? "open" : ""}`}
-          onClick={() => setOpen(!open)}
-          aria-label="Abrir menú"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+        <div className="header-controls">
+          <ThemeToggle />
+          <button
+            className={`menu-btn ${open ? "open" : ""}`}
+            onClick={() => setOpen(!open)}
+            aria-label="Abrir menú"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
         
         <nav className={`nav ${open ? "open" : ""}`}>
           <a 

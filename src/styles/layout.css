@@ -6,7 +6,14 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px var(--c-shadow);
+  transition: background-color 0.3s ease;
+}
+
+/* Modo oscuro para header */
+[data-theme="dark"] header {
+  background: var(--c-dark-card);
+  border-bottom: 1px solid var(--c-dark-border);
 }
 
 /* Contenedor del header */
@@ -19,8 +26,9 @@ header {
   padding: 1rem 2rem;
 }
 
-.proyectos-container {
-  display: grid;
+.header-controls {
+  display: flex;
+  align-items: center;
   gap: 1rem;
 }
 
@@ -48,6 +56,7 @@ header {
   padding: 0.5rem 0;
   font-weight: 500;
   transition: color 0.3s ease;
+  color: var(--c-beige);
 }
 
 .nav a::after {
@@ -69,6 +78,31 @@ header {
 .nav a:hover,
 .nav a.active {
   color: var(--c-terracota);
+}
+
+/* 🔹 Toggle del tema */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: 2px solid var(--c-beige);
+  color: var(--c-beige);
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.theme-toggle:hover {
+  background: var(--c-beige);
+  color: var(--c-marron-oscuro);
+  transform: translateY(-2px);
+}
+
+.theme-toggle-icon {
+  font-size: 1.1rem;
 }
 
 /* 🔹 Menú hamburguesa */
@@ -123,7 +157,11 @@ header {
     align-items: center;
     padding: 2rem;
     transition: right 0.3s ease;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    box-shadow: -5px 0 15px var(--c-shadow);
+  }
+
+  [data-theme="dark"] .nav {
+    background: var(--c-dark-card);
   }
 
   .nav.open {
@@ -133,6 +171,18 @@ header {
   .nav a {
     font-size: 1.2rem;
     padding: 1rem 0;
+  }
+
+  .header-controls {
+    gap: 0.5rem;
+  }
+
+  .theme-toggle .theme-toggle-text {
+    display: none;
+  }
+
+  .theme-toggle {
+    padding: 0.5rem;
   }
 }
 
@@ -146,42 +196,15 @@ section {
   height: auto;
   padding: 4rem 2rem;
   scroll-margin-top: 80px;
+  transition: background-color 0.3s ease;
 }
 
 section:nth-child(even) {
   background-color: rgba(239, 217, 180, 0.1);
 }
 
-/* 🔹 Grid de cursos */
-/* 🔹 Grid de cursos */
-.cursos-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-  margin-top: 1.5rem;
-}
-
-.curso-card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  height: auto; 
-  display: flex;
-  flex-direction: column; /* Permite organizar internamente */
-  justify-content: flex-start;
-}
-
-
-.curso-card p + .proyectos-container {
-  margin-top: 1rem;
-}
-
-/* 🔹 Grid de proyectos */
-.proyectos-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1rem;
+[data-theme="dark"] section:nth-child(even) {
+  background-color: rgba(45, 45, 45, 0.5);
 }
 
 /* 🔹 Footer */
@@ -192,4 +215,10 @@ footer {
   text-align: center;
   padding: 1rem;
   margin-top: 2rem;
+  transition: background-color 0.3s ease;
+}
+
+[data-theme="dark"] footer {
+  background: var(--c-dark-card);
+  border-top: 1px solid var(--c-dark-border);
 }

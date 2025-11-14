@@ -16,27 +16,42 @@ export default function Hobbies() {
           {hobbies.map((hobby, index) => (
             <div key={index} className="hobby-categoria">
               <div className="hobby-header">
+                <div className="hobby-icon">
+                  {hobby.icono || ''}
+                </div>
                 <h3>{hobby.categoria}</h3>
               </div>
               
               <div className="hobby-items">
                 {hobby.items.map((item, itemIndex) => (
                   <div key={itemIndex} className="hobby-item">
-                    <h4>{item.nombre}</h4>
+                    <div className="hobby-item-header">
+                      <h4>{item.nombre}</h4>
+                      {item.nivel && (
+                        <div className="hobby-meta">
+                          <span className="nivel-tag">Nivel: {item.nivel}</span>
+                        </div>
+                      )}
+                    </div>
                     <p>{item.descripcion}</p>
                     
-                    {item.nivel && (
-                      <div className="hobby-meta">
-                        <span className="nivel-tag">Nivel: {item.nivel}</span>
-                      </div>
-                    )}
-                    
-                    {item.libros && (
+                    {item.libros && item.libros.length > 0 && (
                       <div className="libros-lista">
                         <strong>Libros favoritos:</strong>
                         <ul>
                           {item.libros.map((libro, libroIndex) => (
-                            <li key={libroIndex}>📖 {libro}</li>
+                            <li key={libroIndex}>{libro}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {item.proyectos && item.proyectos.length > 0 && (
+                      <div className="proyectos-hobby">
+                        <strong>Proyectos relacionados:</strong>
+                        <ul>
+                          {item.proyectos.map((proyecto, proyectoIndex) => (
+                            <li key={proyectoIndex}>{proyecto}</li>
                           ))}
                         </ul>
                       </div>

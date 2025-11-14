@@ -96,60 +96,90 @@ export default function Informacion() {
   };
 
   return (
-    <section id="informacion">
-      <h2><strong>Información Personal y Profesional</strong></h2>
+    <section id="informacion" className="informacion-section">
+      <div className="informacion-container">
+        <h2><strong>Información Personal y Profesional</strong></h2>
 
-      {/* Biografía */}
-      <h3>Biografía Profesional</h3>
-      <p>{cvData.biografia}</p>
+        {/* Biografía */}
+        <div className="info-card">
+          <h3>Biografía Profesional</h3>
+          <p>{cvData.biografia}</p>
+        </div>
 
-      {/* Educación */}
-      <h3>Educación</h3>
-      <ul>
-        {cvData.educacion.map((edu, i) => (
-          <p key={i}>
-            {edu.titulo} - {edu.institucion} ({edu.periodo})
-          </p>
-        ))}
-      </ul>
+        {/* Educación */}
+        <div className="info-card">
+          <h3>Educación</h3>
+          <div className="educacion-grid">
+            {cvData.educacion.map((edu, i) => (
+              <div key={i} className="educacion-item">
+                <h4>{edu.titulo}</h4>
+                <p className="institucion">{edu.institucion}</p>
+                <p className="periodo">{edu.periodo}</p>
+              </div>
+            ))}
+          </div>
+        </div>
 
-      {/* Habilidades */}
-      <h3>Habilidades Técnicas</h3>
-      {Object.entries(cvData.habilidades).map(([cat, skills], i) => (
-        <p key={i}>
-          <strong>{cat}:</strong> {skills.join(", ")}
-        </p>
-      ))}
+        {/* Habilidades */}
+        <div className="info-card">
+          <h3>Habilidades Técnicas</h3>
+          <div className="habilidades-grid">
+            {Object.entries(cvData.habilidades).map(([cat, skills], i) => (
+              <div key={i} className="habilidad-categoria">
+                <h4>{cat}</h4>
+                <div className="skills-list">
+                  {skills.map((skill, j) => (
+                    <span key={j} className="skill-tag">{skill}</span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
 
-      {/* Certificaciones */}
-      <h3>Certificaciones</h3>
-      <ul>
-        {cvData.certificaciones.map((cert, i) => (
-          <p key={i}>{cert}</p>
-        ))}
-      </ul>
+        {/* Certificaciones */}
+        <div className="info-card">
+          <h3>Certificaciones</h3>
+          <div className="certificaciones-list">
+            {cvData.certificaciones.map((cert, i) => (
+              <div key={i} className="certificacion-item">
+                <span className="cert-icon">📜</span>
+                <span>{cert}</span>
+              </div>
+            ))}
+          </div>
+        </div>
 
-      {/* Redes */}
-      <h3>Redes Profesionales</h3>
-      <p>
-        <a href={cvData.redes.LinkedIn} target="_blank" rel="noopener noreferrer">
-          LinkedIn
-        </a>{" "}
-        |{" "}
-        <a href={cvData.redes.GitHub} target="_blank" rel="noopener noreferrer">
-          GitHub
-        </a>
-      </p>
+        {/* Redes */}
+        <div className="info-card">
+          <h3>Redes Profesionales</h3>
+          <div className="redes-sociales">
+            <a href={cvData.redes.LinkedIn} target="_blank" rel="noopener noreferrer" className="red-social-btn">
+              <span>🔗</span>
+              LinkedIn
+            </a>
+            <a href={cvData.redes.GitHub} target="_blank" rel="noopener noreferrer" className="red-social-btn">
+              <span>💻</span>
+              GitHub
+            </a>
+          </div>
+        </div>
 
-      {/* Información adicional */}
-      <h3>Información Adicional</h3>
-      <p>{cvData.infoAdicional}</p>
+        {/* Información adicional */}
+        <div className="info-card">
+          <h3>Información Adicional</h3>
+          <p>{cvData.infoAdicional}</p>
+        </div>
 
-      {/* Exportar a PDF */}
-      <h3>Exportar CV</h3>
-      <button className="btn" onClick={exportarPDF}>
-        Descargar CV en PDF
-      </button>
+        {/* Exportar a PDF */}
+        <div className="info-card export-section">
+          <h3>Exportar CV</h3>
+          <p>Descarga mi currículum en formato PDF para compartir o imprimir.</p>
+          <button className="btn btn-primary" onClick={exportarPDF}>
+            📄 Descargar CV en PDF
+          </button>
+        </div>
+      </div>
     </section>
   );
 }

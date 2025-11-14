@@ -24,6 +24,14 @@ export default function Presentacion() {
             está en explorar áreas como la ciberseguridad, hacia
             donde quiero orientar mi carrera profesional.
           </p>
+          <div className="presentacion-actions">
+            <a href="#trabajos" className="btn btn-primary">
+              Ver Mis Trabajos
+            </a>
+            <a href="#informacion" className="btn btn-outline">
+              Más Sobre Mí
+            </a>
+          </div>
         </div>
       </div>
     </section>

@@ -1,14 +1,21 @@
+[data-theme="dark"] .curso-card h3,
+[data-theme="dark"] .proyecto-card h4,
+[data-theme="dark"] .modal-header h3 {
+  color: var(--c-dark-text);
+}
 
-
-/* Ejemplo: forzar color de badge dentro de .curso-card */
+/* Ajustes específicos para elementos que necesitan override */
 .curso-card .badge {
-  background: red !important;
+  background: var(--c-terracota) !important;
   color: white !important;
 }
 
 /* Ejemplo de inline style coexistiendo */
 .titulo-seccion {
-  color: var(--c-primary);
+  color: var(--c-verde-oscuro);
   font-size: 1.4rem;
 }
 
+[data-theme="dark"] .titulo-seccion {
+  color: var(--c-dark-text);
+}

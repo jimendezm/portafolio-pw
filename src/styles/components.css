@@ -1,4 +1,4 @@
-/* ===== COMPONENTES BASE ===== */
+
 
 /* Botones */
 .btn {
@@ -20,7 +20,7 @@
 .btn:hover {
   background: var(--c-taupe);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px var(--c-shadow);
 }
 
 .btn:focus-visible {
@@ -53,6 +53,33 @@
   background: var(--c-verde-oscuro);
   color: white;
   transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--c-verde-oscuro);
+  color: var(--c-verde-oscuro);
+}
+
+.btn-outline:hover {
+  background: var(--c-verde-oscuro);
+  color: white;
+}
+
+.btn-primary {
+  background: var(--c-terracota);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--c-verde-oscuro);
+}
+
+.btn-ver {
+  background: var(--c-verde-oscuro);
+  color: white;
+  width: 100%;
+  margin-top: auto;
 }
 
 /* ===== COMPONENTES DE UI ===== */
@@ -112,6 +139,19 @@
   font-weight: 600;
 }
 
+.tipo-badge {
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.tipo-proyecto { background: #4CAF50; color: white; }
+.tipo-laboratorio { background: #2196F3; color: white; }
+.tipo-tarea { background: #FF9800; color: white; }
+.tipo-investigación { background: #9C27B0; color: white; }
+
 /* Modal */
 .modal-overlay {
   position: fixed;
@@ -127,159 +167,308 @@
 }
 
 .modal-content {
-  background: white;
+  background: var(--c-card-bg);
   border-radius: 12px;
   padding: 2rem;
-  max-width: 800px;
-  width: 90%;
+  max-width: 900px;
+  width: 95%;
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 24px var(--c-shadow);
   animation: fadeInUp 0.3s ease;
+  border: 1px solid var(--c-border);
 }
 
-/* Filtros */
-.filters {
+.modal-header {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin: 1rem 0 2rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--c-border);
 }
 
-.filters input {
-  flex: 1;
-  min-width: 200px;
-  padding: 0.8rem;
-  border-radius: 8px;
-  border: 2px solid #e8e8e8;
-  font-size: 1rem;
-  transition: border 0.3s ease;
+.modal-header h3 {
+  color: var(--c-verde-oscuro);
+  margin: 0;
 }
 
-.filters input:focus {
-  border-color: var(--c-terracota);
-  outline: none;
+.modal-subtitle {
+  color: var(--c-text);
+  margin: 0.5rem 0 0 0;
+  font-size: 0.9rem;
 }
 
-/* ===== COMPONENTES DE CARDS ===== */
-
-/* Cards base */
-.proyecto-card, .curso-card, .recomendacion-card, .post-card, .meta-card {
-  background: white;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  border: 1px solid rgba(214, 166, 146, 0.1);
-}
-
-.proyecto-card:hover, 
-.curso-card:hover, 
-.recomendacion-card:hover, 
-.post-card:hover, 
-.meta-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
-
-/* Cards específicas */
-.curso-card {
+.btn-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
   cursor: pointer;
-  height: auto;
+  color: var(--c-text);
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.btn-close:hover {
+  background: var(--c-border);
+}
+
+.modal-descripcion {
+  color: var(--c-text);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* ===== MEJORAS PARA TRABAJOS ACADÉMICOS ===== */
+
+.trabajos-section {
+  background: linear-gradient(135deg, rgba(77, 97, 96, 0.05) 0%, rgba(239, 217, 180, 0.1) 100%);
+}
+
+[data-theme="dark"] .trabajos-section {
+  background: linear-gradient(135deg, rgba(77, 97, 96, 0.1) 0%, rgba(45, 45, 45, 0.3) 100%);
+}
+
+.trabajos-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.trabajos-descripcion {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+  color: var(--c-marron-oscuro);
+  line-height: 1.6;
+}
+
+[data-theme="dark"] .trabajos-descripcion {
+  color: var(--c-dark-text);
+}
+
+/* Grid de cursos mejorado */
+.cursos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.curso-card {
+  background: var(--c-card-bg);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 6px 20px var(--c-shadow);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid var(--c-border);
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
-.proyecto-personal-card {
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+.curso-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px var(--c-shadow);
 }
 
-.proyecto-personal-card:hover {
-  transform: translateY(-5px);
+.curso-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
-.hobby-categoria {
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+.curso-header h3 {
+  color: var(--c-verde-oscuro);
+  margin: 0;
+  flex: 1;
+  font-size: 1.2rem;
 }
 
-.experiencia-card {
-  background: var(--c-bg);
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(214, 166, 146, 0.1);
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.experiencia-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-}
-
-.experiencia-card.destacada {
-  border: 2px solid var(--c-terracota);
-}
-
-.destacado-badge {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
+.curso-badge {
   background: var(--c-terracota);
   color: white;
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 1rem;
   border-radius: 20px;
   font-size: 0.8rem;
   font-weight: 600;
-  z-index: 2;
+  white-space: nowrap;
 }
 
-/* ===== COMPONENTES DE FORMULARIOS ===== */
+.curso-descripcion {
+  color: var(--c-text);
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+  flex: 1;
+}
 
-.form-container {
-  background: white;
-  padding: 2rem;
+.curso-stats {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.stat {
+  background: var(--c-border);
+  padding: 0.4rem 0.8rem;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  margin-bottom: 2rem;
+  font-size: 0.8rem;
+  color: var(--c-text);
 }
 
-.form-group {
+.curso-footer {
+  margin-top: auto;
+}
+
+/* Filtros mejorados */
+.filters-container {
+  background: var(--c-card-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  border: 1px solid var(--c-border);
+}
+
+.search-box {
+  margin-bottom: 1rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid var(--c-border);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: var(--c-bg);
+  color: var(--c-text);
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--c-terracota);
+}
+
+.filter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filter-group label {
+  font-weight: 600;
+  color: var(--c-text);
+  font-size: 0.9rem;
+}
+
+.filter-group select,
+.filter-group input {
+  padding: 0.8rem;
+  border: 2px solid var(--c-border);
+  border-radius: 8px;
+  background: var(--c-bg);
+  color: var(--c-text);
+  font-size: 0.9rem;
+  transition: border-color 0.3s ease;
+}
+
+.filter-group select:focus,
+.filter-group input:focus {
+  outline: none;
+  border-color: var(--c-terracota);
+}
+
+/* Grid de proyectos mejorado */
+.proyectos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.proyecto-card {
+  background: var(--c-card-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px var(--c-shadow);
+  transition: all 0.3s ease;
+  border: 1px solid var(--c-border);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.proyecto-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px var(--c-shadow);
+}
+
+.proyecto-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.proyecto-header h4 {
+  color: var(--c-verde-oscuro);
+  margin: 0;
+  flex: 1;
+  font-size: 1.1rem;
+}
+
+.proyecto-descripcion {
+  color: var(--c-text);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.proyecto-meta {
+  margin-bottom: 1rem;
+}
+
+.fecha {
+  color: var(--c-taupe);
+  font-size: 0.9rem;
+}
+
+.tecnologias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
   margin-bottom: 1.5rem;
 }
 
-.form-input, .form-textarea {
-  width: 100%;
-  padding: 1rem;
-  border: 2px solid #e8e8e8;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-family: inherit;
-  transition: all 0.3s ease;
-  background: #fafafa;
+.proyecto-links {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: auto;
+  flex-wrap: wrap;
 }
 
-.form-input:focus, .form-textarea:focus {
-  outline: none;
-  border-color: var(--c-terracota);
-  background: white;
-  box-shadow: 0 0 0 3px rgba(214, 166, 146, 0.1);
+.proyecto-links .btn {
+  margin-top: 0;
+  flex: 1;
+  min-width: 120px;
+  text-align: center;
 }
 
-.form-textarea {
-  resize: vertical;
-  min-height: 120px;
-}
-
-/* ===== COMPONENTES DE LAYOUT ===== */
+/* ===== COMPONENTES EXISTENTES ACTUALIZADOS ===== */
 
 /* Presentación */
 .presentacion-container {
@@ -307,13 +496,13 @@
   border-radius: 50%;
   overflow: hidden;
   border: 4px solid var(--c-terracota);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 25px var(--c-shadow);
   transition: all 0.3s ease;
 }
 
 .foto-container:hover {
   transform: scale(1.05);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 30px var(--c-shadow);
 }
 
 .foto-perfil {
@@ -341,6 +530,10 @@
   line-height: 1.2;
 }
 
+[data-theme="dark"] .texto-presentacion h2 {
+  color: var(--c-dark-text);
+}
+
 .texto-presentacion h2::after {
   content: '';
   position: absolute;
@@ -352,7 +545,12 @@
   border-radius: 2px;
 }
 
-/* Grids */
+/* Resto de componentes existentes (manteniendo compatibilidad con modo oscuro) */
+.proyectos-container {
+  display: grid;
+  gap: 1rem;
+}
+
 .cursos-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -360,22 +558,12 @@
   margin-top: 1.5rem;
 }
 
-.proyectos-container {
-  display: grid;
-  gap: 1rem;
-}
-
-.proyectos-grid,
 .recomendaciones-grid,
 .posts-grid,
 .hobbies-grid,
 .experiencias-grid {
   display: grid;
   gap: 2rem;
-}
-
-.proyectos-grid {
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 }
 
 .recomendaciones-grid {
@@ -400,351 +588,27 @@
   gap: 1.5rem;
 }
 
-/* ===== COMPONENTES ESPECÍFICOS ===== */
-
-/* Recomendaciones */
-.recomendaciones-section {
-  background: linear-gradient(135deg, var(--c-beige) 0%, rgba(239, 217, 180, 0.1) 100%);
+/* Componentes existentes con compatibilidad modo oscuro */
+.hobby-categoria,
+.experiencia-card,
+.periodo-metas,
+.meta-card,
+.recomendacion-card,
+.post-card {
+  background: var(--c-card-bg);
+  border: 1px solid var(--c-border);
 }
 
-.recomendaciones-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
+.form-container {
+  background: var(--c-card-bg);
+  border: 1px solid var(--c-border);
 }
 
-.recomendaciones-descripcion {
-  text-align: center;
-  margin-bottom: 3rem;
-  font-size: 1.1rem;
-  color: var(--c-marron-oscuro);
-  line-height: 1.6;
-}
-
-.recomendacion-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 1rem;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.recomendacion-mensaje {
-  font-style: italic;
-  margin-bottom: 1rem;
-  line-height: 1.6;
-  color: var(--c-marron-oscuro);
-}
-
-.recomendacion-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  color: var(--c-taupe);
-  font-size: 0.9rem;
-}
-
-/* Hobbies */
-.hobbies-section {
-  background: linear-gradient(135deg, rgba(239, 217, 180, 0.1) 0%, rgba(214, 166, 146, 0.05) 100%);
-}
-
-.hobbies-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.hobbies-descripcion {
-  text-align: center;
-  margin-bottom: 3rem;
-  font-size: 1.1rem;
-  color: var(--c-marron-oscuro);
-  line-height: 1.6;
-}
-
-.hobby-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
-  border-bottom: 2px solid var(--c-beige);
-}
-
-.hobby-icon {
-  font-size: 2rem;
-}
-
-.hobby-header h3 {
-  color: var(--c-verde-oscuro);
-  margin: 0;
-  font-size: 1.4rem;
-}
-
-.hobby-items {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.hobby-item {
-  padding: 1.5rem;
+.form-input,
+.form-textarea {
   background: var(--c-bg);
-  border-radius: 12px;
-  border-left: 4px solid var(--c-terracota);
-}
-
-.hobby-item h4 {
-  color: var(--c-marron-oscuro);
-  margin-bottom: 0.8rem;
-  font-size: 1.2rem;
-}
-
-.libros-lista ul {
-  list-style: none;
-  margin-top: 0.8rem;
-}
-
-.libros-lista li {
-  padding: 0.4rem 0;
-  color: var(--c-taupe);
-  font-size: 0.9rem;
-  line-height: 1.4;
-}
-
-.hobbies-reflexion {
-  background: white;
-  padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  border-left: 5px solid var(--c-verde-oscuro);
-  margin-top: 2rem;
-}
-
-/* Experiencias TEC */
-.experiencias-section {
-  background: white;
-}
-
-.experiencias-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.experiencia-header {
-  padding: 1.5rem 1.5rem 0;
-}
-
-.experiencia-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.experiencia-tipo {
-  background: var(--c-beige);
-  color: var(--c-marron-oscuro);
-  padding: 0.4rem 1rem;
-  border-radius: 15px;
-  font-size: 0.8rem;
-  font-weight: 500;
-}
-
-.experiencia-fecha {
-  color: var(--c-taupe);
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
-.experiencia-imagen {
-  height: 160px;
-  background: linear-gradient(135deg, var(--c-taupe), var(--c-verde-oscuro));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 1rem 1.5rem 0;
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.experiencia-content {
-  padding: 1.5rem;
-}
-
-.proyecto-destacado {
-  background: rgba(214, 166, 146, 0.1);
-  padding: 1rem;
-  border-radius: 8px;
-  margin-bottom: 1.2rem;
-  border-left: 3px solid var(--c-terracota);
-}
-
-.aprendizajes-lista {
-  list-style: none;
-  margin-bottom: 1.5rem;
-}
-
-.aprendizajes-lista li {
-  padding: 0.4rem 0;
-  color: var(--c-marron-oscuro);
-  line-height: 1.4;
-}
-
-.habilidades-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.reflexion-final {
-  background: linear-gradient(135deg, var(--c-beige), rgba(214, 166, 146, 0.1));
-  padding: 2rem;
-  border-radius: 16px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-/* Metas Profesionales */
-.metas-section {
-  background: linear-gradient(135deg, rgba(77, 97, 96, 0.05) 0%, rgba(41, 37, 34, 0.03) 100%);
-}
-
-.metas-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.metas-timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-  margin-bottom: 3rem;
-}
-
-.periodo-metas {
-  background: white;
-  padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(214, 166, 146, 0.1);
-}
-
-.periodo-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 2px solid var(--c-beige);
-}
-
-.periodo-icon {
-  font-size: 2rem;
-}
-
-.periodo-header h3 {
-  color: var(--c-marron-oscuro);
-  margin: 0;
-  font-size: 1.4rem;
-  font-weight: 600;
-}
-
-.meta-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 1rem;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.progreso-barra {
-  position: relative;
-  width: 100px;
-  height: 20px;
-  background: #e8e8e8;
-  border-radius: 10px;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-
-.progreso-fill {
-  height: 100%;
-  background: linear-gradient(90deg, var(--c-terracota), var(--c-verde-oscuro));
-  border-radius: 10px;
-  transition: width 0.8s ease;
-}
-
-.progreso-texto {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: white;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-}
-
-.acciones-section {
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(214, 166, 146, 0.2);
-}
-
-.acciones-lista {
-  list-style: none;
-  margin: 0.5rem 0 0 0;
-  padding: 0;
-}
-
-.acciones-lista li {
-  padding: 0.4rem 0;
-  color: var(--c-taupe);
-  font-size: 0.9rem;
-  line-height: 1.4;
-  border-bottom: 1px solid rgba(214, 166, 146, 0.1);
-}
-
-.acciones-lista li:last-child {
-  border-bottom: none;
-}
-
-.filosofia-crecimiento {
-  background: white;
-  padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  text-align: center;
-}
-
-.filosofia-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-top: 1.5rem;
-}
-
-.filosofia-item {
-  padding: 1.5rem;
-  background: var(--c-bg);
-  border-radius: 12px;
-  border-top: 4px solid var(--c-terracota);
-}
-
-.filosofia-item h4 {
-  color: var(--c-marron-oscuro);
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
+  color: var(--c-text);
+  border-color: var(--c-border);
 }
 
 /* ===== ANIMACIONES ===== */
@@ -781,8 +645,9 @@
     font-size: 2.2rem;
   }
   
-  .metas-lista {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  .cursos-grid,
+  .proyectos-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }
 
@@ -818,7 +683,7 @@
   }
   
   /* Grids responsivos */
-  .cursos-container,
+  .cursos-grid,
   .proyectos-grid,
   .recomendaciones-grid,
   .posts-grid,
@@ -829,7 +694,12 @@
     gap: 1.5rem;
   }
   
+  .filter-grid {
+    grid-template-columns: 1fr;
+  }
+  
   /* Padding reducido en móviles */
+  .trabajos-container,
   .recomendaciones-container,
   .hobbies-container,
   .experiencias-container,
@@ -837,21 +707,6 @@
     padding: 0 1.5rem;
   }
   
-  .form-container,
-  .recomendacion-card,
-  .post-card,
-  .hobby-categoria,
-  .experiencia-card,
-  .periodo-metas,
-  .meta-card {
-    padding: 1.5rem;
-  }
-  
-  .hobby-item {
-    padding: 1.2rem;
-  }
-  
-  /* Modal responsive */
   .modal-content {
     padding: 1.5rem;
     width: 95%;
@@ -859,6 +714,7 @@
   }
   
   /* Headers flex en columna */
+  .proyecto-header,
   .recomendacion-header,
   .experiencia-meta,
   .meta-header {
@@ -872,15 +728,8 @@
     gap: 0.8rem;
   }
   
-  .recomendacion-footer {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-  
-  .progreso-barra {
-    width: 100%;
-    max-width: 150px;
+  .proyecto-links .btn {
+    min-width: auto;
   }
 }
 
@@ -903,6 +752,7 @@
     font-size: 1.8rem;
   }
   
+  .trabajos-container,
   .recomendaciones-container,
   .hobbies-container,
   .experiencias-container,
@@ -910,78 +760,19 @@
     padding: 0 1rem;
   }
   
-  .form-container,
-  .recomendacion-card,
-  .post-card,
-  .hobby-categoria,
-  .experiencia-card,
-  .periodo-metas,
-  .meta-card,
-  .filosofia-crecimiento {
+  .curso-card,
+  .proyecto-card,
+  .filters-container {
     padding: 1.2rem;
-  }
-  
-  .hobby-item {
-    padding: 1rem;
-  }
-  
-  .experiencia-header,
-  .experiencia-content {
-    padding: 1.2rem;
-  }
-  
-  .experiencia-imagen {
-    margin: 1rem 1.2rem 0;
-    height: 140px;
   }
   
   .modal-content {
     padding: 1rem;
-    width: 95%;
   }
   
   .btn {
     padding: 0.7rem 1.2rem;
     font-size: 0.9rem;
-  }
-  
-  .filosofia-content {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  
-  .filosofia-item {
-    padding: 1.2rem;
-  }
-}
-
-/* Muy pequeños */
-@media (max-width: 360px) {
-  .presentacion-content {
-    gap: 1.5rem;
-  }
-  
-  .foto-container {
-    width: 160px;
-    height: 160px;
-  }
-  
-  .texto-presentacion h2 {
-    font-size: 1.6rem;
-  }
-  
-  .form-container,
-  .recomendacion-card,
-  .post-card,
-  .hobby-categoria,
-  .experiencia-card,
-  .periodo-metas,
-  .meta-card {
-    padding: 1rem;
-  }
-  
-  .modal-content {
-    padding: 0.8rem;
   }
 }
 
@@ -991,9 +782,10 @@
   text-align: center;
   padding: 3rem 2rem;
   color: var(--c-taupe);
-  background: white;
+  background: var(--c-card-bg);
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 15px var(--c-shadow);
+  grid-column: 1 / -1;
 }
 
 .recomendaciones-info {
@@ -1003,4 +795,231 @@
   margin-top: 2rem;
   border-left: 4px solid var(--c-verde-oscuro);
   font-size: 0.9rem;
+}
+
+[data-theme="dark"] .recomendaciones-info {
+  background: rgba(77, 97, 96, 0.2);
+}
+
+
+/* Presentación - Acciones */
+.presentacion-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.presentacion-actions .btn {
+  margin-top: 0;
+}
+
+/* Información - Cards */
+.informacion-section {
+  background: linear-gradient(135deg, rgba(214, 166, 146, 0.05) 0%, rgba(77, 97, 96, 0.05) 100%);
+}
+
+[data-theme="dark"] .informacion-section {
+  background: linear-gradient(135deg, rgba(214, 166, 146, 0.1) 0%, rgba(77, 97, 96, 0.1) 100%);
+}
+
+.informacion-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.info-card {
+  background: var(--c-card-bg);
+  padding: 2rem;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 15px var(--c-shadow);
+  border: 1px solid var(--c-border);
+}
+
+.educacion-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.educacion-item {
+  padding: 1.5rem;
+  background: var(--c-bg);
+  border-radius: 12px;
+  border-left: 4px solid var(--c-terracota);
+}
+
+.educacion-item h4 {
+  color: var(--c-verde-oscuro);
+  margin-bottom: 0.5rem;
+}
+
+.institucion {
+  font-weight: 600;
+  color: var(--c-text);
+  margin-bottom: 0.3rem;
+}
+
+.periodo {
+  color: var(--c-taupe);
+  font-size: 0.9rem;
+}
+
+.habilidades-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.habilidad-categoria {
+  padding: 1.5rem;
+  background: var(--c-bg);
+  border-radius: 12px;
+}
+
+.habilidad-categoria h4 {
+  color: var(--c-verde-oscuro);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-tag {
+  background: var(--c-verde-oscuro);
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.certificaciones-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.certificacion-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--c-bg);
+  border-radius: 8px;
+  border-left: 4px solid var(--c-terracota);
+}
+
+.cert-icon {
+  font-size: 1.2rem;
+}
+
+.redes-sociales {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.red-social-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  background: var(--c-verde-oscuro);
+  color: white;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.red-social-btn:hover {
+  background: var(--c-taupe);
+  transform: translateY(-2px);
+  color: white;
+}
+
+.export-section {
+  text-align: center;
+  background: linear-gradient(135deg, var(--c-beige), rgba(214, 166, 146, 0.1));
+}
+
+[data-theme="dark"] .export-section {
+  background: linear-gradient(135deg, var(--c-dark-card), rgba(77, 97, 96, 0.2));
+}
+
+.export-section .btn {
+  margin-top: 1rem;
+}
+
+/* Trabajos - Mejoras adicionales */
+.filters-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--c-border);
+  font-size: 0.9rem;
+  color: var(--c-taupe);
+}
+
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+}
+
+.no-links {
+  color: var(--c-taupe);
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--c-border);
+}
+
+/* Responsive para nuevos componentes */
+@media (max-width: 768px) {
+  .presentacion-actions {
+    justify-content: center;
+  }
+  
+  .presentacion-actions .btn {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+  }
+  
+  .educacion-grid,
+  .habilidades-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .redes-sociales {
+    flex-direction: column;
+  }
+  
+  .red-social-btn {
+    justify-content: center;
+  }
+  
+  .filters-info {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
 }
