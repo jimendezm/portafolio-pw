@@ -10,33 +10,10 @@ export default function Recomendaciones() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Cargar recomendaciones iniciales del JSON y del localStorage
+  // Cargar recomendaciones iniciales
   useEffect(() => {
-    const stored = localStorage.getItem('recomendaciones');
-    if (stored) {
-      const recomendacionesStorage = JSON.parse(stored);
-      const todasRecomendaciones = [
-        ...recomendacionesData.recomendacionesIniciales,
-        ...recomendacionesStorage
-      ];
-      setRecomendaciones(todasRecomendaciones);
-    } else {
-      setRecomendaciones(recomendacionesData.recomendacionesIniciales);
-    }
+    setRecomendaciones(recomendacionesData.recomendacionesIniciales);
   }, []);
-
-  // Guardar solo las nuevas recomendaciones en localStorage
-  useEffect(() => {
-    const nuevasRecomendaciones = recomendaciones.filter(
-      rec => !recomendacionesData.recomendacionesIniciales.some(
-        recInicial => recInicial.id === rec.id
-      )
-    );
-    
-    if (nuevasRecomendaciones.length > 0) {
-      localStorage.setItem('recomendaciones', JSON.stringify(nuevasRecomendaciones));
-    }
-  }, [recomendaciones]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -59,14 +36,15 @@ export default function Recomendaciones() {
         month: 'long',
         day: 'numeric'
       }),
-      estado: 'aprobado'
+      estado: 'pendiente' // Cambiado a pendiente para indicar que necesita revisión
     };
     
+    // Solo se agrega al estado local (no se persiste)
     setRecomendaciones([recomendacion, ...recomendaciones]);
     setNuevaRecomendacion({ nombre: '', curso: '', mensaje: '' });
     setIsSubmitting(false);
     
-    alert('¡Gracias por tu recomendación! Tu mensaje ha sido enviado correctamente.');
+    alert('¡Gracias por tu recomendación! Tu mensaje ha sido enviado. ');
   };
 
   const handleChange = (e) => {
@@ -177,7 +155,10 @@ export default function Recomendaciones() {
                           <span className="curso-tag">{recomendacion.curso}</span>
                         )}
                       </div>
-                      {recomendacion.id > 3 && (
+                      {recomendacion.estado === 'pendiente' && (
+                        <span className="nueva-badge" style={{background: '#FF9800'}}>Pendiente</span>
+                      )}
+                      {recomendacion.estado === 'aprobado' && recomendacion.id > 3 && (
                         <span className="nueva-badge">Nueva</span>
                       )}
                     </div>
@@ -199,10 +180,9 @@ export default function Recomendaciones() {
         {/* Información sobre las recomendaciones */}
         <div className="recomendaciones-info">
           <p>
-            <strong>Nota:</strong> Las recomendaciones con el badge "Nueva" son comentarios 
-            recientes enviados a través del formulario. Las demás son recomendaciones 
-            de proyectos académicos anteriores. Todas las recomendaciones son verificadas 
-            antes de ser publicadas.
+            <strong>Nota:</strong> Las recomendaciones marcadas como "Pendiente" son comentarios 
+            recientes que se muestran solo durante esta sesión. Para recomendaciones permanentes, 
+            puedes contactarme directamente.
           </p>
         </div>
       </div>

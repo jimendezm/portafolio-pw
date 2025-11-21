@@ -27,7 +27,7 @@
   100% { transform: rotate(360deg); }
 }
 
-/* 🔹 BOTONES (Manteniendo tu estilo) */
+/* 🔹 BOTONES */
 .btn {
   display: inline-block;
   margin-top: 0.5rem;
@@ -178,7 +178,7 @@
 .tipo-tarea { background: #FF9800; color: white; }
 .tipo-investigación { background: #9C27B0; color: white; }
 
-/* 🔹 MODAL DE TRABAJOS (Mejorado) */
+/* 🔹 MODAL DE TRABAJOS */
 .modal-overlay {
   position: fixed;
   top: 0;
