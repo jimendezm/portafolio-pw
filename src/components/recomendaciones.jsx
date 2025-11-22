@@ -9,17 +9,16 @@ export default function Recomendaciones() {
     mensaje: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   // Cargar recomendaciones al iniciar
   useEffect(() => {
     const storedRecomendaciones = localStorage.getItem('recomendaciones-portafolio');
     
     if (storedRecomendaciones) {
-      // Si hay recomendaciones en localStorage, usarlas
       const recomendacionesGuardadas = JSON.parse(storedRecomendaciones);
       setRecomendaciones(recomendacionesGuardadas);
     } else {
-      // Si no hay, usar las del JSON estático
       setRecomendaciones(recomendacionesData.recomendacionesIniciales);
     }
   }, []);
@@ -46,7 +45,7 @@ export default function Recomendaciones() {
     
     const recomendacion = {
       ...nuevaRecomendacion,
-      id: Date.now(), // ID único basado en timestamp
+      id: Date.now(),
       fecha: new Date().toLocaleDateString('es-CR', {
         year: 'numeric',
         month: 'long',
@@ -61,7 +60,8 @@ export default function Recomendaciones() {
     setNuevaRecomendacion({ nombre: '', curso: '', mensaje: '' });
     setIsSubmitting(false);
     
-    alert('¡Gracias por tu recomendación! Tu mensaje ha sido guardado.');
+    // Mostrar modal de confirmación
+    setShowModal(true);
   };
 
   const handleChange = (e) => {
@@ -75,12 +75,8 @@ export default function Recomendaciones() {
     return name.split(' ').map(n => n[0]).join('').toUpperCase();
   };
 
-  // Función para limpiar todas las recomendaciones 
-  const limpiarRecomendaciones = () => {
-    if (confirm('¿Estás segura de que quieres limpiar todas las recomendaciones?')) {
-      localStorage.removeItem('recomendaciones-portafolio');
-      setRecomendaciones(recomendacionesData.recomendacionesIniciales);
-    }
+  const closeModal = () => {
+    setShowModal(false);
   };
 
   return (
@@ -185,7 +181,7 @@ export default function Recomendaciones() {
                           <span className="curso-tag">{recomendacion.curso}</span>
                         )}
                       </div>
-                      {recomendacion.id > 1000000000000 && ( // Si es una recomendación nueva (ID basado en timestamp)
+                      {recomendacion.id > 1000000000000 && (
                         <span className="nueva-badge">Nueva</span>
                       )}
                     </div>
@@ -199,6 +195,30 @@ export default function Recomendaciones() {
             </div>
           )}
         </div>
+
+        {/* Modal de confirmación */}
+        {showModal && (
+          <div className="modal-overlay" onClick={closeModal}>
+            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+              <div className="modal-header">
+                <h3>✅ ¡Éxito!</h3>
+                <button className="btn-close" onClick={closeModal}>×</button>
+              </div>
+              <div className="modal-descripcion">
+                <p style={{textAlign: 'center', fontSize: '1.1rem', marginBottom: '2rem'}}>
+                  <strong>¡Gracias por tu recomendación!</strong>
+                  <br />
+                  Tu mensaje ha sido guardado correctamente.
+                </p>
+              </div>
+              <div className="modal-footer">
+                <button className="btn btn-primary" onClick={closeModal}>
+                  Aceptar
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
